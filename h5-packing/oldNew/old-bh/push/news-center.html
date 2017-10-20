@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>消息中心</title><!-- Bootstrap -->
+    <link href="../libs/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/news-push.css" rel="stylesheet">
+    <script src="../build/adaptation.js"></script>
+    <style>.more {
+        margin-top: 17px;
+        top: 0;
+    }</style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header"><a href="goBack" class="navbar-brand"><img src="../images/goback.png" alt="返回"></a>
+        </div>
+        <p class="navbar-text">消息中心</p></div>
+</nav>
+<div class="container-fluid bgc22">
+    <div class="clearfix">
+        <div class="nav-blank1 row"></div>
+        <div class="nav-blank3 row"></div>
+        <div class="news-row row"><a href="warning-news.html">
+            <div class="col-xs-11">
+                <div class="pd4"><span class="a1">预警消息提醒</span>
+                    <div class="circle-number text-center" id="warNum"></div>
+                </div>
+                <p class="c2 lh18" id="warAbs">------------------</p></div>
+            <img src="../images/more.png" alt="消息详情" class="pull-right more"></a></div>
+        <div class="nav-blank3 row"></div>
+        <div class="news-row row"><a href="system-news.html">
+            <div class="col-xs-11">
+                <div class="pd4"><span class="a1">系统通知</span>
+                    <div class="circle-number text-center" id="sysNum"></div>
+                </div>
+                <p class="c2 lh18" id="sysAbs">------------------</p></div>
+            <img src="../images/more.png" alt="消息详情" class="pull-right more"></a></div>
+    </div>
+</div>
+<script src="../libs/jquery-2.2.0.min.js"></script>
+<script src="../build/news-center.js"></script>
+</body>
+</html>

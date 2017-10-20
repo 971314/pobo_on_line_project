@@ -1,0 +1,33 @@
+<template>
+    <div class="full-height">
+        <div class="btn-tabs tab-no-divide">
+            <div class="tabs active">
+                <button>财经要闻</button>
+            </div>
+            <div class="tabs">
+                <button>研发报告</button>
+            </div>
+            <div class="tabs">
+                <button>热点解读</button>
+            </div>
+            <div class="tabs">
+                <button>每日早评</button>
+            </div>
+        </div>
+        <div class="hr-border-10"></div>
+        <div class="list" v-for="i in 10">
+            <div class="list-info">
+                <div class="info-title">深交所：紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯</div>
+                <div class="info-more">03-05 17:35</div>
+            </div>
+            <div class="list-img">
+                <img>
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+</script>
+<style lang="less">
+@import "./../assets/css/common.less";
+</style>

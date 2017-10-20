@@ -1,0 +1,35 @@
+// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+import _ from "lodash";
+import Vue from "vue";
+import MintUI from 'mint-ui';
+import AMap from 'vue-amap';
+import 'mint-ui/lib/style.css';
+import router from './routers/router';
+import store from './store/store';
+import "./common/directive";
+import "./common/mixin";
+import "./common/filter";
+import App from "./App";
+
+import FastClick from "fastclick";
+
+// 去掉ios上300毫秒延迟
+FastClick.attach(document.body);
+
+Vue.use(MintUI);
+
+Vue.use(AMap);
+
+AMap.initAMapApiLoader({
+  key: '9f3fcaf5b28a64643c4637e0b97260b9',
+  plugin: ['AMap.Autocomplete', 'AMap.PlaceSearch', 'AMap.Scale', 'AMap.OverView', 'AMap.ToolBar', 'AMap.MapType', 'AMap.PolyEditor', 'AMap.CircleEditor']
+});
+
+Vue.config.devtools = true;
+new Vue({
+    el: '#app',
+    router,
+    store,
+    render: h => h(App)
+});

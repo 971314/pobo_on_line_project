@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>止损止盈</title>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/pikaday-package.css" rel="stylesheet">
+</head>
+<body>
+<div id="stopOfFiled">
+    <router-view></router-view>
+</div>
+</body>
+<script type="text/javascript" src="../../../js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="../../../js/perfect-scrollbar-zh.js"></script>
+<script type="text/javascript" src="../../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../js/PB.Page.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+<script>
+    $(function(){
+        $(".test > tr").click(function(){
+            $(this).addClass("tableCheckCss").siblings().removeClass("tableCheckCss");
+        });
+    })
+</script>
+</html>

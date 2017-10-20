@@ -1,0 +1,223 @@
+{
+  "version": 1,
+  "banners": {
+    "version": 1,
+    "isShow": true,
+    "data": [
+      {
+        "img": "images/gm2.png",
+        "url": ""
+      },
+      {
+        "img": "images/gm4.png",
+        "url": ""
+      },
+      {
+        "img": "images/gm6.png",
+        "url": ""
+      },
+      {
+        "img": "images/gm8.png",
+        "url": ""
+      }
+    ]
+  },
+  "contracts": {
+    "isShow": true,
+    "showType": 0,
+    "data": [
+      {
+        "market": "1000",
+        "name": "上证指数",
+        "code": "000001"
+      },
+      {
+        "market": "1001",
+        "name": "深证成指",
+        "code": "399001"
+      },
+      {
+        "market": "1001",
+        "name": "创业板指",
+        "code": "399006"
+      },
+      {
+        "market": "1000",
+        "name": "沪深300",
+        "code": "000300"
+      },
+      {
+        "market": "1000",
+        "name": "A股指数",
+        "code": "000002"
+      },
+      {
+        "market": "1000",
+        "name": "B股指数",
+        "code": "000003"
+      }
+    ]
+  },
+  "customs": {
+    "isShow": true,
+    "version": 0.27,
+    "checkedVer": 0.03,
+    "updateDate": "2016-09-08",
+    "contents": [
+      {
+        "title": "开户",
+        "checked": "1",
+        "image1": "kaihu.png",
+        "image2": "kaihu1.png",
+        "url": "pobo:pageId=800006",
+        "id": "kaihu"
+      },
+      {
+        "title": "公司公告",
+        "checked": "1",
+        "image1": "xiadan.png",
+        "image2": "xiadan1.png",
+        "url": "pobo:pageId=900005&url=info/view/info-an.html?name=公司公告&groupID=511801",
+        "id": "gonggao"
+      },
+      {
+        "title": "交易提示",
+        "checked": "1",
+        "image1": "zhangting.png",
+        "image2": "zhangting1.png",
+        "url": "pobo:pageId=900005&url=info/view/info-an.html?name=交易提示&groupID=511802",
+        "id": "tishi"
+      },
+      {
+        "title": "今日要闻",
+        "checked": "1",
+        "image1": "caijing.png",
+        "image2": "caijing1.png",
+        "url": "pobo:pageId=904000&url=info/index.html",
+        "id": "xinwen"
+      },
+      {
+        "title": "财经日历",
+        "checked": "1",
+        "image1": "gmcaijing.png",
+        "image2": "gmcaijing1.png",
+        "url": "pobo:pageId=904001&url=http://61.151.254.61/Data/CAIJING/FinancialCalendarNosge.html",
+        "id": "caijing"
+      },
+      {
+        "title": "投资者园地",
+        "checked": "1",
+        "image1": "jiaoyu.png",
+        "image2": "jiaoyu1.png",
+        "url": "pobo:pageId=900005&url=info/view/info-an.html?name=投资者园地&groupID=511803",
+        "id": "yuandi"
+      },
+      {
+        "title": "常见问题",
+        "checked": "1",
+        "image1": "wenda.png",
+        "image2": "wenda1.png",
+        "url": "pobo:pageId=900005&url=info/view/info-an.html?name=常见问题&groupID=511804",
+        "id": "wenti"
+      },
+      {
+        "title": "客服热线",
+        "checked": "1",
+        "image1": "kefu.png",
+        "image2": "kefu1.png",
+        "url": "pobo:pageId=800007&tel=4007700686",
+        "id": "kefu"
+      },
+      {
+        "title": "中金所",
+        "checked": "0",
+        "image1": "zhong.png",
+        "image2": "zhong1.png",
+        "url": "pobo:pageId=801302",
+        "id": "zhong"
+      },
+      {
+        "title": "上期所",
+        "checked": "0",
+        "image1": "shang.png",
+        "image2": "shang1.png",
+        "url": "pobo:pageId=801303",
+        "id": "shang"
+      },
+      {
+        "title": "郑商所",
+        "checked": "0",
+        "image1": "zheng.png",
+        "image2": "zheng1.png",
+        "url": "pobo:pageId=801304",
+        "id": "zheng"
+      },
+      {
+        "title": "大商所",
+        "checked": "0",
+        "image1": "da.png",
+        "image2": "da1.png",
+        "url": "pobo:pageId=801305",
+        "id": "da"
+      },
+      {
+        "title": "外盘行情",
+        "checked": "0",
+        "image1": "wai.png",
+        "image2": "wai1.png",
+        "url": "pobo:pageId=801700",
+        "id": "wai"
+      }
+    ]
+  },
+  "news": {
+    "isShow": true,
+    "version": 1,
+    "webservice": "http://192.168.6.18/HdNews2/Web/Hd_LatestNewsList.aspx?type=mu&doc=json",
+    "data": [
+      {
+        "name": "今日要闻",
+        "ids": [
+          "10101"
+        ],
+        "count": 10
+      },
+      {
+        "name": "金融财经",
+        "ids": [
+          "10301"
+        ],
+        "count": 10
+      },
+      {
+        "name": "稀贵金属",
+        "ids": [
+          "40102",
+          "40202"
+        ],
+        "count": 10
+      }
+    ]
+  },
+  "my": {
+    "version": 1,
+    "data": [
+      {
+        "name": "交易设置",
+        "url": "pobo:pageId=805006"
+      },
+      {
+        "name": "系统设置",
+        "url": "pobo:pageId=805007"
+      },
+      {
+        "name": "系统地址",
+        "url": "pobo:pageId=805008"
+      },
+      {
+        "name": "版本说明",
+        "url": "pobo:pageId=805009"
+      }
+    ]
+  }
+}

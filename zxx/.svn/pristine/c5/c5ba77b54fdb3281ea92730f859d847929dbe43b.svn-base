@@ -1,0 +1,39 @@
+/**
+ * Created by kuo zi on 2016/10/14.
+ */
+const restUrl = {
+    auth: {
+        name: "认证",
+        url: "member/auth"
+    },
+    newsBase: {
+        name: "新闻列表",
+        url: "newsBase/searchPage"
+    },
+    newsDetail: {
+        name: "新闻详情",
+        url: "newsBase/get"
+    },
+    queryAllFuturesExchange: {
+        name: "所有期货交易所",
+        url: "futures/queryAllFuturesExchange"
+    },
+    queryFuturesVarityByExchId: {
+        name: "查询交易所下品种",
+        url: "futures/queryFuturesVarityByExchId"
+    },
+    queryProductRankingByTypeId: {
+        name: "品种查询对应持仓",
+        url: "futures/queryProductRankingByTypeId"
+    },
+    queryContractRankingByFuturesCode: {
+        name: "合约代码查询相应持仓",
+        url: "futures/queryContractRankingByTypeId"
+    },
+    queryFuturesMember: {
+        name: "合约代码查询相应持仓",
+        url: "futures/queryFuturesMember"
+    }
+};
+
+export default restUrl;

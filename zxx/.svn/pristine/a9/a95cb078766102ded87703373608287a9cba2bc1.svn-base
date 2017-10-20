@@ -1,0 +1,6 @@
+//项目
+export const projectPath = "consult/";
+//图片服务器前缀
+export const PrefixImg = "https://test.yunyesoft.com/fsimg/";
+//微信菜单栏配置
+export const WxMenuConf = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx638babfb858e32f8&redirect_uri=http%3a%2f%2fservice.yunyesoft.com%2fjifen%2findex.html%3fpath%3d${path}%26params%3d${params}%26merchantNum%3d${merchantNum}&response_type=code&scope=snsapi_base&state=mineauth#wechat_redirect";

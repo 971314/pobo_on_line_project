@@ -1,0 +1,110 @@
+.navbar {
+  display: flex;
+  user-select: none;
+  padding: 0
+}
+
+.navbar-body, .navbar-footer, .navbar-header {
+  padding: 0 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.navbar-header {
+  -webkit-box-flex: .5;
+  -webkit-flex: .5;
+  -ms-flex: .5;
+  flex: .5
+}
+
+.navbar-body {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1
+}
+
+.navbar-footer {
+  -webkit-box-flex: .5;
+  -webkit-flex: .5;
+  -ms-flex: .5;
+  flex: .5;
+  text-align: right
+}
+
+.common-nav {
+  font-size: 17px;
+  color: #fff;
+  background-color: #eb1212;
+  position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 1030;
+}
+
+.common-nav .navbar-header, .risk .navbar-footer {
+  -webkit-box-flex: .4;
+  -ms-flex: .4;
+  flex: .4;
+}
+
+.common-nav .navbar-header {
+  padding-right: 0;
+}
+
+.common-nav .navbar-header a {
+  display: block;
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 23px;
+  line-height: 21px;
+}
+
+.common-nav .navbar-header .back {
+  margin-right: 15px;
+}
+
+.common-nav .navbar-header .back img {
+  height: 18px;
+}
+
+.common-nav .navbar-header .search img {
+  height: 17px;
+}
+
+.common-nav .navbar-body {
+  position: relative;
+  padding: 0;
+  -webkit-box-flex: 1.2;
+  -ms-flex: 1.2;
+  flex: 1.2;
+  line-height: 42px;
+}
+
+.common-nav .navbar-footer {
+  padding-left: 0;
+}
+
+.common-nav .navbar-footer a {
+  display: block;
+  float: right;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 23px;
+  line-height: 21px;
+}
+
+.common-nav .navbar-footer .service {
+  margin-right: 15px;
+}
+
+.common-nav .navbar-footer .service img {
+  height: 18px;
+}
+
+.common-nav .navbar-footer .message img {
+  height: 14px;
+}

@@ -1,0 +1,53 @@
+body{
+    background:#f7f7fa;
+}
+body, html {
+    font-family: Microsoft Yahei,Arial,Helvetica,sans-serif;
+}
+#tou{
+    margin-top:3.7rem;
+}
+
+.area{
+    border-top:1px solid #ebebeb;
+    border-bottom:1px solid #ebebeb;
+    background-color:#fff;
+    font-size:13px;
+    color:#1a1a1a;
+    width:100%;
+}
+.area-title{
+    margin-left:16px;
+    margin-bottom:0;
+    padding-left:17px;
+}
+/*.area-title a,*/
+/*.geng{*/
+    /*position:relative*/
+/*}*/
+.info-list{
+    border-top:1px solid silver;
+    padding-bottom:1rem;
+}
+.info-list a:nth-of-type(1){
+    color:black;
+}
+.info-list a{
+    display:inline-block;
+    width:100%;
+    padding: 1rem 0 0 22px;
+    color:#727272;
+}
+.info-list a .font{
+    display:inline-block;
+    width:72%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.info-list a .data{
+    display:inline-block;
+    color:#9a9a9a;
+    float:right;
+    padding-right:1rem;
+}

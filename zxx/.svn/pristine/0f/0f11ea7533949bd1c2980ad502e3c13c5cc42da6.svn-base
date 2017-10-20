@@ -1,0 +1,58 @@
+<template>
+    <div class="full-height">
+        <div>
+            <mt-cell title="会议活动" to="//github.com" is-link value="更多">
+                <span class="hyhd" slot="icon"></span>
+            </mt-cell>
+            <div class="hr"></div>
+            </mt-cell>
+            <div class="list" v-for="i in 5">
+                <div class="list-info">
+                    <div class="info-title">深交所：紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯</div>
+                    <div class="info-more">03-05 17:35</div>
+                </div>
+                <div class="list-img">
+                    <img>
+                </div>
+            </div>
+        </div>
+        <div class="hr-10"></div>
+        <div>
+            <mt-cell title="会议回顾" to="//github.com" is-link value="更多">
+                <span class="hyhg" slot="icon"></span>
+            </mt-cell>
+            <div class="hr"></div>
+            </mt-cell>
+            <div class="list" v-for="i in 5">
+                <div class="list-info">
+                    <div class="info-title">深交所：紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯</div>
+                    <div class="info-more">03-05 17:35</div>
+                </div>
+                <div class="list-img">
+                    <img>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+</script>
+<style lang="less">
+@import "./../assets/css/common.less";
+.hyhd,
+.hyhg {
+    display: inline-block;
+    width: 10px;
+    height: 8px;
+    background: no-repeat center;
+    background-size: 8px;
+}
+
+.hyhd {
+    background-image: url(./../assets/img/b-会议活动.png);
+}
+
+.hyhg {
+    background-image: url(./../assets/img/b-会议回顾.png);
+}
+</style>

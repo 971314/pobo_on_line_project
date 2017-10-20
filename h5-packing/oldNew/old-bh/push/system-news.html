@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>系统通知</title><!-- Bootstrap -->
+    <link href="../libs/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/news-push.css" rel="stylesheet">
+    <script src="../build/adaptation.js"></script>
+    <style>.more {
+        margin-top: 9px;
+    }</style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header"><a href="goBack" class="navbar-brand"><img src="../images/goback.png" alt="返回"></a>
+        </div>
+        <p class="navbar-text">系统通知</p></div>
+</nav>
+<div class="container-fluid">
+    <div class="clearfix">
+        <div class="clock-row row"><img src="../images/clock.png" alt="提醒" class="clock pull-left">
+            <p class="a2 lh50 pull-left">您有<span class="a3 bolder" id="sysNewsNum">--</span>条未读消息</p></div>
+        <div class="nav-blank3 row"></div>
+        <div id="info-list"></div>
+    </div>
+</div>
+<script src="../libs/react.min.js"></script>
+<script src="../libs/react-dom.min.js"></script>
+<script src="../libs/jquery-2.2.0.min.js"></script>
+<script src="../build/system-news.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<template>
+    <div class="full-height">
+        <div class="share">最新更新时间:<span v-text="'2017-03-07 17:18'"></span></div>
+        <div class="btn-group" style="padding :0 10px">
+            <button class="active">选择品种</button>
+            <router-link tag="button" to="checkCompany">选择公司</router-link>
+        </div>
+        <div class="select-group" style="padding:10px">
+            <div class="select active" style="width:140px;">
+                <div class="select-value">上海期货交易所</div>
+                <div class="select-options">
+                    <div class="option active">上海期货交易所</div>
+                    <div class="option">上海期货交易所1</div>
+                    <div class="option">上海期货交易所2</div>
+                    <div class="option">上海期货交易所2</div>
+                    <div class="option">上海期货交易所2</div>
+                    <div class="option">上海期货交易所2</div>
+                    <div class="option">上海期货交易所2</div>
+                    <div class="option">上海期货交易所2</div>
+                    <div class="option">上海期货交易所2</div>
+                </div>
+            </div>
+            <div class="select">
+                <div class="select-value">铜</div>
+                <div class="select-options">
+                    <div class="option">铜1</div>
+                    <div class="option">铜2</div>
+                    <div class="option">铜3</div>
+                </div>
+            </div>
+            <div class="select">
+                <div class="select-value">cu1701</div>
+                <div class="select-options">
+                    <div class="option">cu1701</div>
+                    <div class="option">cu1702</div>
+                    <div class="option">cu1703</div>
+                </div>
+            </div>
+        </div>
+        <div class="hr-border-10"></div>
+        <div class="btn-tabs">
+            <div class="tabs active">
+                <button>多头持仓</button>
+            </div>
+            <div class="tabs">
+                <button>空头持仓</button>
+            </div>
+            <div class="tabs">
+                <button>净持仓</button>
+            </div>
+        </div>
+        <div class="hr-border-10"></div>
+        <div class="table" style="padding:0 10px;">
+            <div class="tr font-23 text-color17">
+                <div class="th th1">序号</div>
+                <div class="th">公司简介</div>
+                <div class="th text-right">多头持仓</div>
+                <div class="th text-right">多持增加</div>
+                <div class="th text-right">多头均价</div>
+            </div>
+            <div class="tr font-26 text-color18" v-for="(i,index) in 10">
+                <div class="td td1 text-center" :class="index<3?'order'+index:'order'" v-text="index<3?'':index+1"></div>
+                <div class="td text-center">中信建投</div>
+                <div class="td text-right text-color3">1808</div>
+                <div class="td text-right text-color2">-30</div>
+                <div class="td text-right">多头均价</div>
+            </div>
+        </div>
+        <div class="hr"></div>
+        <div class="hr-border-10"></div>
+        <div class="btn-tabs tab-color">
+            <div class="tabs active">
+                <button>相关新闻</button>
+            </div>
+            <div class="tabs">
+                <button>品种研报</button>
+            </div>
+            <div class="tabs">
+                <button>市场公告</button>
+            </div>
+        </div>
+        <div class="hr"></div>
+        <router-link tag="div" :to="{name:'detail',query:{cId:n.cId}}" class="list" v-for="n in news">
+            <div class="list-info">
+                <div class="info-title" v-text="n.cInfotitle"></div>
+                <div class="info-more">热门话题 {{n.cUpdatetime | dateFmt('MM-dd hh:mm')}}</div>
+            </div>
+            <div class="list-img">
+                <img>
+            </div>
+        </router-link>
+    </div>
+</template>
+<script>
+export default {
+    data() {
+            return {
+                news: []
+            }
+        },
+        created() {
+            this.$post("newsBase", {
+                pageNo: 1,
+                pageSize: 5,
+                cTypecode: "1002",
+                cShowcode: "1",
+            }).then(res => {
+                this.news = res.results;
+            });
+        }
+}
+</script>
+<style lang="less">
+@import "./../assets/css/common.less";
+.share {
+    margin: 0 10px;
+    padding: 5px 20px 5px 0;
+    background: url("./../assets/img/分享-默认.png") no-repeat center right;
+    background-size: 17px 17px;
+    .font-23;
+    .text-color17;
+}
+
+.order {
+    position: relative;
+    line-height: 25px;
+    color: #fff;
+    font-size: 10px;
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        margin-top: -10px;
+        margin-left: -10px;
+        border-radius: 20px;
+        background: #f06c6a;
+    }
+}
+
+.order0 {
+    background: url(./../assets/img/2金牌.png) no-repeat center;
+    background-size: 15px 20px;
+}
+
+.order1 {
+    background: url(./../assets/img/2银牌.png) no-repeat center;
+    background-size: 15px 20px;
+}
+
+.order2 {
+    background: url(./../assets/img/2铜牌.png) no-repeat center;
+    background-size: 15px 20px;
+}
+</style>

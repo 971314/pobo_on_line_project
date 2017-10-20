@@ -1,0 +1,58 @@
+/**
+ * Created by kuo zi on 2016/10/14.
+ */
+const restUrl = {
+    auth: {
+        name: "认证",
+        url: "member/auth"
+    },imgVerifyCode: {
+        name: "获取图形验证码",
+        url: "dataCenter/imgVerifyCode"
+    },
+    phVerifyCode: {
+        name: "校验图形验证码和发送短信验证码",
+        url: "dataCenter/phVerifyCode"
+    },
+    bindPhone: {
+        name: "校验短信验证码和绑定手机号",
+        url: "dataCenter/bindPhone"
+    },
+    login: {
+        name: "登录",
+        url: "member/checkMember"
+    },
+    register: {
+        name: "注册",
+        url: "member/register"
+    },
+    querybanner: {
+        name: "获取banner",
+        url: "member/querybanner"
+    },
+    score: {
+        name: "获取积分",
+        url: "member/score"
+    },
+    queryCoupon: {
+        name: "查询优惠券",
+        url: "coupon/queryCoupon"
+    },
+    queryScores: {
+        name: "查询积分记录",
+        url: "member/queryScores"
+    },
+    queryOrders: {
+        name: "查询兑换记录",
+        url: "order/queryOrders"
+    },
+    getRechargeScore: {
+        name: "获取话费积分",
+        url: "order/getRechargeScore"
+    },
+    exchange: {
+        name: "兑换",
+        url: "order/exchange"
+    }
+};
+
+export default restUrl;

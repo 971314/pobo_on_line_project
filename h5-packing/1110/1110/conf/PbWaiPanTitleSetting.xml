@@ -1,0 +1,91 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<pbitems
+    updateDate="2016-07-14"
+    version="1.1" >
+    
+    <item
+        fieldNO="5"
+        name="最新价"
+        checked="1"
+        sortType="29"/>
+
+    <item
+        fieldNO="17"
+        name="涨跌"
+        checked="1"
+        sortType="61"/>
+
+    <item
+        fieldNO="23"
+        name="涨跌幅"
+        checked="1"
+        sortType="62"/>
+
+    <item
+        fieldNO="72"
+        name="买价"
+        checked="1"
+        sortType="40"/>
+
+    <item
+        fieldNO="73"
+        name="卖价"
+        checked="1"
+        sortType="42"/>
+
+    <item
+        fieldNO="60"
+        name="买量"
+        checked="1"
+        sortType="41"/>
+        
+    <item
+        fieldNO="61"
+        name="卖量"
+        checked="1"
+        sortType="43"/>
+
+    <item
+        fieldNO="6"
+        name="成交量"
+        checked="1"
+        sortType="35"/>
+
+    <item
+        fieldNO="305"
+        name="持仓量"
+        checked="1"
+        sortType="39"/>
+    
+    <item
+        fieldNO="163"
+        name="昨结"
+        checked="1"
+        sortType="24"/>
+        
+    <item
+        fieldNO="2"
+        name="开盘"
+        checked="1"
+        sortType="26"/>
+
+    <item
+        fieldNO="3"
+        name="最高"
+        checked="1"
+        sortType="27"/>
+
+    <item
+        fieldNO="4"
+        name="最低"
+        checked="1"
+        sortType="28"/>
+        
+    <item
+        fieldNO="1"
+        name="昨收"
+        checked="1"
+        sortType="23"/>
+
+
+</pbitems>

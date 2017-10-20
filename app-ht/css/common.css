@@ -1,0 +1,254 @@
+@charset "UTF-8";
+.f-icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: text-bottom;
+}
+.f-icon.tagIcon {
+  background-color: #123c88;
+  width: 6px;
+  height: 18px;
+}
+.f-icon.openIcon {
+  background-image: url("../images/openIcon.jpg");
+  width: 16px;
+  height: 17px;
+}
+.f-icon.userIcon {
+  background-image: url("../images/userIcon.jpg");
+  width: 27.5px;
+  height: 27.5px;
+}
+.f-icon.kefuIcon {
+  background-image: url("../images/kefuIcon.jpg");
+  width: 30px;
+  height: 29px;
+}
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+  font-family: '微软雅黑', Arial, sans-serif;
+  line-height: 2em;
+  color: #323232;
+  background-color: #fafafa;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+ol {
+  list-style-position: inside;
+}
+a {
+  color: #323232;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  overflow: hidden;
+  height: 0;
+  clear: both;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+img {
+  max-width: 100%;
+}
+.txtIndent {
+  text-indent: 2em;
+}
+.ta-c {
+  text-align: center!important;
+}
+.ta-l {
+  text-align: left!important;
+}
+.ta-r {
+  text-align: right!important;
+}
+body #header {
+  background-color: #1d2b48;
+  padding: 7px 15px;
+}
+body #header .head {
+  position: relative;
+}
+body #header .head h1 {
+  width: 70%;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+}
+body #header .head a.headBtn {
+  position: absolute;
+  top: 0;
+}
+body #header .head a.headBtn.headBtn-left {
+  left: 0;
+}
+body #header .head a.headBtn.headBtn-right {
+  right: 0;
+}
+body #main {
+  background-color: #fafafa;
+  margin-top: 3.7rem;
+  padding:50px 15px 25px 15px;
+}
+body #main.guideList {
+  padding: 0;
+}
+body #main.guideList .title {
+  background-color: #e2e2e2;
+  border-bottom: 1px solid #d8d8da;
+}
+body #main.guideList .title a {
+  display: inline-block;
+  width: 49%;
+  text-align: center;
+  font-size: 1.3rem;
+  border-bottom: 3px solid transparent;
+  padding: 9px 0 6px;
+}
+body #main.guideList .title a.curr {
+  color: #316ab7;
+  border-bottom: 3px solid #316ab7;
+}
+body #main.guideList .wrapper {
+  border: 0 none;
+  margin: 0;
+}
+body #main.guideList .wrapper .wrapInn {
+  display: none;
+}
+body #main.guideList .wrapper .wrapInn.curr {
+  display: block;
+}
+body #main.guideList .wrapper ul li div.tit {
+  padding: 13px 15px;
+  background-color: #f7f6fb;
+  border-bottom: 1px solid #d8d8da;
+  margin: 0;
+}
+body #main.guideList .wrapper ul li div.tit h3 {
+  margin: 0;
+  color: #123c88;
+  font-size: 1.6rem;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+body #main.guideList .wrapper ul li div.inn {
+  display: none;
+  padding: 20px 15px;
+  background-color: #eaeaea;
+  margin-bottom: 0;
+}
+body #main.guideList .wrapper ul li div.inn p.note {
+  font-size: 1.2rem;
+}
+body #main.guideList .wrapper ul li div.inn dt {
+  color: #475acf;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0;
+}
+body #main.guideList .wrapper ul li div.inn dd {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+body #main.haitongDesc .title p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #323232;
+}
+body #main.haitongDesc .title h3 {
+  margin: 20px 0 10px;
+  color: #1d2b48;
+  font-size: 1.7rem;
+}
+body #main.guide div.wrapper {
+  border: 0 none;
+}
+body #main div.enVer {
+  margin: 0 -15px;
+  padding: 25px 15px;
+  background-color: #fff;
+}
+body #main div.title {
+  text-align: center;
+}
+body #main div.title h2 {
+  color: #4155ce;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+body #main div.title p {
+  line-height: 1.5em;
+  font-size: 1.3rem;
+  color: #909090;
+}
+body #main div.title .note {
+  color: #909090;
+  font-size: 1.3rem;
+}
+body #main div.wrapper {
+  margin-top: 33px;
+  margin-bottom: 33px;
+  border-top: 1px dashed #333333;
+  border-bottom: 1px dashed #333333;
+}
+body #main div.wrapper h3 {
+  margin: 20px 0;
+  color: #1d2b48;
+  font-size: 1.7rem;
+}
+body #main div.wrapper div {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+body #main div.wrapper div table {
+  width: 100%;
+}
+body #main div.wrapper div p.subTitle {
+  color: #4155ce;
+  margin: 10px 0 5px;
+}
+body #main div.wrapper div p.subTitle a {
+  color: #4155ce;
+}
+body #main div.wrapper div dt {
+  font-size: 1.5rem;
+  color: #323232;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+body #main div.wrapper div dd {
+  font-size: 1.5rem;
+  color: #323232;
+}
+body #main div.otherNote h4 {
+  color: #909090;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+body #main div.otherNote p {
+  color: #909090;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+body #main div.otherNote p a {
+  color: #909090;
+  font-size: 1.4rem;
+}

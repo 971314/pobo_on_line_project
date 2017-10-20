@@ -1,0 +1,130 @@
+<template>
+    <div class="full-height">
+        <div class="share">最新更新时间:<span v-text="'2017-03-07 17:18'"></span></div>
+        <div id="zs1" style="height:300px"></div>
+        <div id="zs2" style="height:250px"></div>
+        <div id="zs3" style="height:250px"></div>
+    </div>
+</template>
+<script>
+import echarts from "echarts";
+export default {
+    data() {
+            return {
+                myCharts1: null,
+                myCharts2: null,
+                myCharts3: null
+            }
+        },
+        created() {
+            this.option1 = {
+                title: {
+                    left: "center",
+                    text: "中信建投 铜合约持仓量走势图"
+                },
+                color: ['#ff3d3d', '#00a0e9', '#f603ff', '#00b419', '#5f52a0'],
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    x: 'left',
+                    padding: [30, 30, 30, 30],
+                    data: ['顺丰', '邮政', '圆通', '中通', '天天'],
+                    selected: {
+                        '顺丰': true,
+                        '邮政': true,
+                        '圆通': false,
+                        '中通': false,
+                        '天天': false
+                    }
+                },
+                grid: {
+                    left: '10',
+                    right: '20',
+                    bottom: '0',
+                    top: '18%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    splitLine: { //网格线
+                        show: true,
+                        lineStyle: {
+                            color: ['#b1b1b1'],
+                            type: 'dashed'
+                        }
+                    },
+                    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+                },
+                yAxis: {
+                    splitLine: { //网格线
+                        show: true,
+                        lineStyle: {
+                            color: ['#b1b1b1'],
+                            type: 'dashed'
+                        }
+                    }
+                },
+                series: [{
+                    name: '顺丰',
+                    type: 'line',
+                    data: ['200', '-300', '500', '300', '280', '290', '230'],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top' //值显示
+                        }
+                    }
+                }, {
+                    name: '邮政',
+                    type: 'line',
+                    data: ['300', '350', '-400', '380', '390', '410', '380'],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top'
+                        }
+                    }
+                }, {
+                    name: '圆通',
+                    type: 'line',
+                    data: ['100', '90', '200', '65', '99', '71', '120'],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top'
+                        }
+                    }
+                }, {
+                    name: '中通',
+                    type: 'line',
+                    data: ['190', '200', '-280', '220', '240', '319', '330'],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top'
+                        }
+                    }
+                }, {
+                    name: '天天',
+                    type: 'line',
+                    data: ['240', '140', '150', '100', '198', '140', '180'],
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top'
+                        }
+                    }
+                }]
+            };
+        },
+        mounted() {
+            this.myCharts1 = echarts.init(document.getElementById("zs1"));
+            this.myCharts1.setOption(this.option1);
+        }
+}
+</script>
+<style lang="less">
+@import "./../assets/css/common.less";
+</style>

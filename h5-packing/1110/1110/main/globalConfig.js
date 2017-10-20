@@ -1,0 +1,1 @@
+define(function(e,a,r){var t={platform:0,seaBaseUrl:"/1110/main/",isFordHttpReq:1};r.exports=t});

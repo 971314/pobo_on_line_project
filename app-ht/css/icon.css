@@ -1,0 +1,26 @@
+.f-icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: text-bottom;
+}
+.f-icon.tagIcon {
+  background-color: #123c88;
+  width: 6px;
+  height: 18px;
+}
+.f-icon.openIcon {
+  background-image: url("../images/openIcon.jpg");
+  width: 16px;
+  height: 17px;
+}
+.f-icon.userIcon {
+  background-image: url("../images/userIcon.jpg");
+  width: 27.5px;
+  height: 27.5px;
+}
+.f-icon.kefuIcon {
+  background-image: url("../images/kefuIcon.jpg");
+  width: 30px;
+  height: 29px;
+}

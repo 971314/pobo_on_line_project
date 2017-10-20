@@ -1,0 +1,80 @@
+<template>
+    <div class="full-height">
+        <!-- <ui-head title="建投优选"></ui-head> -->
+        <common-nav>
+            <div slot="body">
+                建投优选
+            </div>
+        </common-nav>
+        <div class="container" v-infinite-scroll="query" infinite-scroll-disabled="loading" infinite-scroll-distance="10">
+            <div class="btn-tabs tab-no-divide">
+                <div class="tabs" :class="{'active':show == 1}" @click="change(1)">
+                    <button>财经要闻</button>
+                </div>
+                <div class="tabs" :class="{'active':show == 2}" @click="change(2)">
+                    <button>研发报告</button>
+                </div>
+                <div class="tabs" :class="{'active':show == 3}" @click="change(3)">
+                    <button>热点解读</button>
+                </div>
+                <div class="tabs" :class="{'active':show == 4}" @click="change(4)">
+                    <button>每日早评</button>
+                </div>
+            </div>
+            <div class="hr-border-10"></div>
+            <ui-infos :infos="infos"></ui-infos>
+        </div>
+    </div>
+</template>
+<script>
+import uiInfos from "./../components/uiInfos.vue";
+export default {
+    components: {
+        "ui-infos": uiInfos
+    },
+    data() {
+        return {
+            show: 1,
+            pageNo: 0,
+            infos: [],
+            loading: false,
+            noMore: false
+        }
+    },
+    methods: {
+        change(e) {
+            this.noMore = false;
+            this.loading = false;
+            this.show = e;
+
+            this.infos = [];
+            this.pageNo = 0;
+            this.query();
+        },
+        query() {
+            this.loading = true;
+            if (this.noMore) {
+                return this.$toast("没有更多了");
+            }
+            this.pageNo++;
+            this.$post("newsBase", {
+                pageNo: this.pageNo,
+                pageSize: this.pageSize,
+                tags: null,
+                part: null
+            }).then(res => {
+                for (let r of res.results) {
+                    this.infos.push(r);
+                }
+                if (res.results.length < this.pageSize) {
+                    this.noMore = true;
+                }
+                this.loading = false;
+            });
+        }
+    }
+}
+</script>
+<style lang="less">
+@import "./../assets/css/common.less";
+</style>

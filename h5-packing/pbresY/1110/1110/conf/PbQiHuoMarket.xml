@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbmarkets version="2.2" updateDate="2016-07-13">
+    <pbmarket name="主力合约" id="602" fixed="1" default="1">
+        <image normal="zhuli.png" focus="zhuli.png" />
+    </pbmarket>
+    <pbmarket name="中金所" id="805" default="1">
+        <image normal="zhongjin.png" focus="zhongjin.png" />
+        <MenuName title="股指期货" zsGroupCode="GZQHZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="GZQH" MarketID="2300" />
+            </Rules>
+        </MenuName>
+        <MenuName title="国债期货" zsGroupCode="ZQQHZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="ZQQH" MarketID="2300" />
+            </Rules>
+        </MenuName>
+    </pbmarket>
+    <pbmarket name="上期所" id="806" default="1">
+        <image normal="shangqi.png" focus="shangqi.png" />
+        <MenuName title="沪铜" zsGroupCode="SHCUZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="SHCU" MarketID="2001" />
+            </Rules>
+        </MenuName>
+        <MenuName title="沪铝" zsGroupCode="SHALZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="SHAL" MarketID="2001" />
+            </Rules>
+        </MenuName>
+        <MenuName title="沪锌" zsGroupCode="SHZNZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="SHZN" MarketID="2001" />
+            </Rules>
+        </MenuName>
+        <MenuName title="沪铅" zsGroupCode="SHPBZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="SHPB" MarketID="2001" />
+            </Rules>
+        </MenuName>
+        <MenuName title="橡胶" zsGroupCode="SHRUZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="SHRU" MarketID="2001" />
+            </Rules>
+        </MenuName>
+        <MenuName title="燃油" zsGroupCode="SHFUZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="SHFU" MarketID="2000" />
+            </Rules>
+        </MenuName>
+        <MenuName title="螺纹" zsGroupCode="SHRBZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="SHRB" MarketID="2001" />
+            </Rules>
+        </MenuName>
+        <MenuName title="线材" zsGroupCode="SHWRZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="SHWR" MarketID="2000" />
+            </Rules>
+        </MenuName>
+        <MenuName title="黄金" zsGroupCode="SHAUZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="SHAU" MarketID="2001" />
+            </Rules>
+        </MenuName>
+        <MenuName title="白银" zsGroupCode="SHAGZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="SHAG" MarketID="2001" />
+            </Rules>
+        </MenuName>
+        <MenuName title="沥青" zsGroupCode="SHBUZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="SHBU" MarketID="2001" />
+            </Rules>
+        </MenuName>
+        <MenuName title="热卷" zsGroupCode="SHHCZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="SHHC" MarketID="2001" />
+            </Rules>
+        </MenuName>
+        <MenuName title="沪镍" zsGroupCode="SHNIZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="SHNI" MarketID="2001" />
+            </Rules>
+        </MenuName>
+        <MenuName title="沪锡" zsGroupCode="SHSNZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="SHSN" MarketID="2001" />
+            </Rules>
+        </MenuName>
+    </pbmarket>
+    <pbmarket name="郑商所" id="808" default="1">
+        <image normal="zhengzhou.png" focus="zhengzhou.png" />
+        <MenuName title="普麦" zsGroupCode="ZZPMZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="ZZPM" MarketID="2200" />
+            </Rules>
+        </MenuName>
+        <MenuName title="强麦" zsGroupCode="ZZWHZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="ZZWH" MarketID="2200" />
+            </Rules>
+        </MenuName>
+        <MenuName title="白糖" zsGroupCode="ZZSRZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="ZZSR" MarketID="2201" />
+            </Rules>
+        </MenuName>
+        <MenuName title="棉花" zsGroupCode="ZZCFZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="ZZCF" MarketID="2201" />
+            </Rules>
+        </MenuName>
+        <MenuName title="PTA" zsGroupCode="ZZPTAZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="ZZPTA" MarketID="2201" />
+            </Rules>
+        </MenuName>
+        <MenuName title="菜油" zsGroupCode="ZZOIZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="ZZOI" MarketID="2201" />
+            </Rules>
+        </MenuName>
+        <MenuName title="早籼" zsGroupCode="ZZRIZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="ZZRI" MarketID="2200" />
+            </Rules>
+        </MenuName>
+        <MenuName title="甲醇" zsGroupCode="ZZMEZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="ZZME" MarketID="2201" />
+            </Rules>
+        </MenuName>
+        <MenuName title="玻璃" zsGroupCode="ZZFGZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="ZZFG" MarketID="2201" />
+            </Rules>
+        </MenuName>
+        <MenuName title="菜籽" zsGroupCode="ZZRSZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="ZZRS" MarketID="2200" />
+            </Rules>
+        </MenuName>
+        <MenuName title="菜粕" zsGroupCode="ZZRMZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="ZZRM" MarketID="2201" />
+            </Rules>
+        </MenuName>
+        <MenuName title="动力煤" zsGroupCode="ZZTCZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="ZZTC" MarketID="2201" />
+            </Rules>
+        </MenuName>
+        <MenuName title="粳稻" zsGroupCode="ZZJRZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="ZZJR" MarketID="2200" />
+            </Rules>
+        </MenuName>
+        <MenuName title="晚籼" zsGroupCode="ZZLRZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="ZZLR" MarketID="2200" />
+            </Rules>
+        </MenuName>
+        <MenuName title="硅铁" zsGroupCode="ZZJSZS">
+            <Rules>
+                <Rule Category="MarketAndCode" GroupCode="ZZJS" MarketID="2200" Code="0336*"/>
+            </Rules>
+        </MenuName>
+        <MenuName title="锰硅" zsGroupCode="ZZJSZS">
+            <Rules>
+                <Rule Category="MarketAndCode" GroupCode="ZZJS" MarketID="2200" Code="0337*"/>
+            </Rules>
+        </MenuName>
+    </pbmarket>
+    <pbmarket name="大商所" id="807" default="1">
+        <image normal="dashang.png" focus="dashang.png" />
+        <MenuName title="豆一" zsGroupCode="DLAZS">
+            <Rules>
+                <Rule Category="MarketAndCode" GroupCode="DLA" MarketID="2101" Code="0210*" />
+                <Rule Category="MarketAndCode" GroupCode="DLA" MarketID="2101" Code="0220*" />
+            </Rules>
+        </MenuName>
+        <MenuName title="豆二" zsGroupCode="DLAZS">
+            <Rules>
+                <Rule Category="MarketAndCode" GroupCode="DLA" MarketID="2101" Code="0230*" />
+            </Rules>
+        </MenuName>
+        <MenuName title="玉米" zsGroupCode="DLCZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="DLC" MarketID="2100" />
+            </Rules>
+        </MenuName>
+        <MenuName title="豆粕" zsGroupCode="DLMZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="DLM" MarketID="2101" />
+            </Rules>
+        </MenuName>
+        <MenuName title="豆油" zsGroupCode="DLYZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="DLY" MarketID="2101" />
+            </Rules>
+        </MenuName>
+        <MenuName title="棕榈油" zsGroupCode="DLPZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="DLP" MarketID="2101" />
+            </Rules>
+        </MenuName>
+        <MenuName title="L" zsGroupCode="DLLZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="DLL" MarketID="2100" />
+            </Rules>
+        </MenuName>
+        <MenuName title="PVC" zsGroupCode="DLVZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="DLV" MarketID="2100" />
+            </Rules>
+        </MenuName>
+        <MenuName title="焦炭" zsGroupCode="DLJZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="DLJ" MarketID="2101" />
+            </Rules>
+        </MenuName>
+        <MenuName title="焦煤" zsGroupCode="DLJMZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="DLJM" MarketID="2101" />
+            </Rules>
+        </MenuName>
+        <MenuName title="铁矿石" zsGroupCode="DLIZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="DLI" MarketID="2101" />
+            </Rules>
+        </MenuName>
+        <MenuName title="鸡蛋" zsGroupCode="DLJDZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="DLJD" MarketID="2100" />
+            </Rules>
+        </MenuName>
+        <MenuName title="纤维板" zsGroupCode="DLFBZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="DLFB" MarketID="2100" />
+            </Rules>
+        </MenuName>
+        <MenuName title="胶合板" zsGroupCode="DLBBZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="DLBB" MarketID="2100" />
+            </Rules>
+        </MenuName>
+        <MenuName title="PP" zsGroupCode="DLPPZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="DLPP" MarketID="2100" />
+            </Rules>
+        </MenuName>
+        <MenuName title="玉米淀粉" zsGroupCode="DLCSZS">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="DLCS" MarketID="2100" />
+            </Rules>
+        </MenuName>
+    </pbmarket>
+</pbmarkets>

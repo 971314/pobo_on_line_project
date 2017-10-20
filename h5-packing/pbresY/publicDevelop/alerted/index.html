@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>预警</title>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/alerted.css">
+    <link rel="stylesheet" href="../../css/configStyle.css">
+</head>
+<body>
+<div id="loading">
+    <div></div>
+</div>
+<div id="alerted">
+    <!--模态框-->
+    <div class="modal  dialog-info" id="noneTuchDialog" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="border-radius: 10px;">
+                <div class="modal-body dialog-bottom" v-for="name in dealnames" @click="dealnameClick(name)" data-dismiss="modal">
+                    {{name.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--title-->
+    <nav class="navbar navInfo navbar-fixed-top">
+        <div class="titleBack"><a href="goBack"><img src="../images/goback.png"> </a></div>
+        <div class="nav-title font18"> 预警 </div>
+        <div class="navThree">
+            <img src="../images/refresh.png" width="18px" height="18px" v-if="initImg" @click="refreshClick()">
+            <span v-else="orSet" class="colorw" @click="replacementClick()">{{reSetValue}}</span>
+        </div>
+    </nav>
+    <!--切换-->
+    <div class="divFixed clearfloat">
+        <div :class="{conditionDiv : noneTouchOne, noneRight: noneTouchOne, touchConditionDiv: isTouchOne}"
+             @click="touchClick(0)">
+            <a href="#alertedSet" class="font18 " data-toggle="tab" id="shezhi">预警设置</a>
+        </div>
+        <div :class="{conditionDiv : noneTouchTwo, noneRight: noneTouchTwo, touchConditionDiv: isTouchTwo}"
+             @click="touchClick(1)">
+            <a href="#TableList" class="font18" data-toggle="tab" id="my">我的预警</a>
+        </div>
+    </div>
+    <!--content-->
+    <div class="alert-content tab-content">
+        <!--预警设置-->
+        <div id="alertedSet" class="tab-pane fade in active">
+            <div class="setDiv">
+                <ul class="clearfloat">
+                    <li>
+                        <div class="setDivOne" style="height: 32.5px">
+                            <span  id="dealname" class="inputText" data-toggle="modal" data-target="#noneTuchDialog" :style="{color:dealnameColor}">{{dealname}}</span>
+                            <!--<input type="text" class="inputText" placeholder="选择期货合约" />-->
+                        </div>
+                        <div class="fontcol8080">仓差：</div>
+                        <div class="setDivThree" id="warehouseBad">--</div>
+                    </li>
+                    <li>
+                        <div><span class="fontcol8080">最新价：</span><span class="fontcol1423" id="priceValue">--</span></div>
+                        <div><span class="fontcol8080">持仓量：</span><span id="openInterest">--</span></div>
+                    </li>
+                    <li>
+                        <div>
+                            <span :class="{set:selectOne,unset:unselectOne}" class="select"
+                                  @click="selectClick(0)"></span>
+                            <span class="fontcol8080">价格上限</span>
+                        </div>
+                        <div id="setinput" class="mr15">
+                            <input type="text" class="inputText" disabled id="priceup" @blur="inputBlur(0)" v-model="msg0"/>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span :class="{set:selectTwo,unset:unselectTwo}" class="select"
+                                  @click="selectClick(1)"></span>
+                            <span class="fontcol8080">价格下限</span>
+                        </div>
+                        <div id="setinput" class="mr15">
+                            <input type="text" class="inputText" disabled id="pricedown" @blur="inputBlur(1)" v-model="msg1"/>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span :class="{set:selectThree,unset:unselectThree}" class="select"
+                                  @click="selectClick(2)"></span>
+                            <span class="fontcol8080">现手上限</span>
+                        </div>
+                        <div id="setinput" class="mr15">
+                            <input type="text" class="inputText" disabled id="curVolUp" @blur="inputBlur(2)" v-model="msg2"/>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span :class="{set:selectFour,unset:unselectFour}" class="select"
+                                  @click="selectClick(3)"></span>
+                            <span class="fontcol8080">成交量上限</span>
+                        </div>
+                        <div id="setinput" class="mr15">
+                            <input type="text" class="inputText" disabled id="volumeUp" @blur="inputBlur(3)" v-model="msg3"/>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span :class="{set:selectFive,unset:unselectFive}" class="select"
+                                  @click="selectClick(4)"></span>
+                            <span class="fontcol8080">持仓上限</span>
+                        </div>
+                        <div id="setinput" class="mr15">
+                            <input type="text" class="inputText" disabled id="entrustUp" @blur="inputBlur(4)" v-model="msg4"/>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="fontcol8080 notes navbar-fixed-bottom">
+                <div>
+                    注：该预警永久有效<br/>
+                    当其中一条条件被触发后，不会再次预警<br/>
+                    预警限制为二十条
+                </div>
+            </div>
+            <div class="btnDiv">
+                <button type="button" class="btnSubmit" data-toggle="button" @click="insertClick()" disabled>
+                    添加
+                </button>
+            </div>
+        </div>
+        <!--我的预警-->
+        <div id="TableList" class="tab-pane fade">
+            <div class="TheadWrap h45 color52">
+                <table class="brief static">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <span class="h45 width15" style="line-height: 45px;">合约</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="detailOuter">
+                    <table class="staticBody h45">
+                        <tbody class="h45">
+                            <tr class=" h45">
+                                <td><span class="width11" style="line-height: 45px;">最新价</span></td>
+                                <td><span class="width14" style="line-height: 45px;">价格上限</span></td>
+                                <td><span class="width14" style="line-height: 45px;">价格下限</span></td>
+                                <td><span class="width14" style="line-height: 45px;">现手上限</span></td>
+                                <td><span class="width14" style="line-height: 45px;">成交量上限</span></td>
+                                <td><span class="width14" style="line-height: 45px;">持仓上限</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="TbodyWrap" id="TbodyList">
+                <div class="TbodyInner">
+                    <table class="brief static">
+                        <tbody>
+                        <tr v-for="myVal in myAlerted">
+                            <td>
+                                <span class="width15">{{myVal.HYDM}}</span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="detailOuter">
+                        <table class="detail staticBody">
+                            <tbody>
+                            <tr v-for="myVal in myAlerted">
+                                <td><span class="width11">{{myVal.newPrice}}</span></td>
+                                <td><span class="width14">{{myVal.priceup}}</span></td>
+                                <td><span class="width14">{{myVal.pricedown}}</span></td>
+                                <td><span class="width14">{{myVal.CurVolUp}}</span></td>
+                                <td><span class="width14">{{myVal.VolumeUp}}</span></td>
+                                <td><span class="width14">{{myVal.AmountUp}}</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../js/vue.js"></script>
+<script type="text/javascript" src="../../js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script src="../../js/PB.Page.js"></script>
+<script src="js/alerted.js"></script>
+<script src="../../js/perfect-scrollbar-zh.js"></script>
+<script>
+    Ps.initialize(document.getElementById('TbodyList'), {
+        frozen: true,
+        wheelSpeed: 0.3
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+define("futures/scripts/userInfo/messagePush.js",function(n,i,o){function t(){}function e(){$.bindEvent($(u+" .icon_back"),function(){window.location.href="goBack"})}function s(){}function a(){}function c(){}var u="#userInfo_messagePush";n("validatorUtils");var f={init:t,bindPageEvent:e,destroy:s,pageBack:a,load:c};o.exports=f});

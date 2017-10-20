@@ -1,0 +1,396 @@
+html,body{
+    height:100%;/*关键代码*/
+}
+.conditionDiv {
+    text-align: center;
+    float: left;
+    width: 50%;
+    border: solid 1px #e4e7f0;
+    height: 32px;
+    line-height: 28px;
+    font-size: 16px;
+    color: #808086;
+    background: #fff;
+}
+
+.conditionDiv a {
+    color: #808086;
+    display:inline-block;
+    width:100%;
+}
+
+.touchConditionDiv {
+    text-align: center;
+    float: left;
+    width: 50%;
+    border: solid 1px #e4e7f0;
+    height: 32px;
+    line-height: 28px;
+    font-size: 16px;
+    color: #3366cc;
+    background: #e6e6ec;
+
+}
+
+/*公共 start*/
+table{
+    table-layout:fixed;
+    font-size: 18px;
+}
+.clearfloat:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.fontcol8080 {
+    color: #808086;
+}
+
+.fontcol1423 {
+    color: #14a238;
+}
+
+.mr15 {
+    margin-right: 12px;
+}
+
+.h45 {
+    height: 45px;
+    line-height: 45px;
+}
+
+.h60 {
+    height: 60px;
+    line-height: 60px;
+}
+
+.color52 {
+    color: #52668c;
+}
+
+.width15 {
+    width: 100%;
+    z-index: 1;
+    /*background: #fff;*/
+    padding-left: 10px;
+    line-height: 59px;
+    /*position: relative;*/
+}
+
+.width11 {
+    width: 100%;
+    text-align: center;
+    line-height: 59px;
+    /*margin-left:16%;*/
+}
+
+.width14 {
+    width: 100%;
+    line-height: 59px;
+    text-align: center;
+}
+
+.font18 {
+    font-size: 18px;
+}
+
+.colorw {
+    color: #fff;
+}
+span{
+    display: inline-block;
+}
+/*公共end*/
+/*nav title css start*/
+.navInfo {
+    width: 100%;
+    height: 44px;
+    background: #3366cc;
+    line-height: 44px;
+    min-height: 44px
+}
+
+.titleBack {
+    text-align: center;
+    float: left;
+    width: 9%;
+}
+
+.nav-title {
+    text-align: center;
+    float: left;
+    width: 75%;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 44px;
+}
+
+.navThree {
+    position: fixed;
+    text-align: center;
+    width: 16%;
+    cursor: pointer;
+    right: 0;
+    top:0;
+    height: 44px;
+    z-index: 9999;
+    line-height: 44px;
+}
+
+.noneRight {
+    border-right: none;
+}
+
+/*nav title css end*/
+
+/*正在加载 start*/
+#loading{
+    position: fixed;
+    top: 3.7rem;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 99999;
+}
+#loading>div{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    margin-left: -16px;
+    margin-top: -16px;
+    width: 32px;
+    height: 32px;
+    background: url(../../images/loading.gif) no-repeat;
+}
+
+/*正在加载 end*/
+
+/*模态框 start*/
+.dialog-bottom {
+    text-align: center;
+    font-size: 16px;
+    color: #1a1a1a;
+    border-bottom: solid 1px #e4e7f0;
+}
+.dialog-info{width: 70%; margin:0 auto;}
+.modal-dialog{margin-top: 80%;}
+.modal-content{
+    max-height:334px;
+    overflow: auto;
+}
+.deleatMes{
+    position: absolute;
+    top: 49%;
+    left: 27%;
+    padding: 13px 50px;
+    display:none;
+    border-radius: 6px;
+    background-color: rgba(0,0,0,.7);
+    color: white;
+}
+/*模态框 end*/
+/*content start*/
+.divFixed {
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+}
+
+.alert-content {
+    width: 100%;
+    padding-top: 40px;
+}
+
+.setDiv {
+    background: #fff;
+    border-top: solid 1px #e4e7f0;
+}
+
+.setDiv ul {
+    /*width: 97%;*/
+    margin: 0 15px 0 10px;
+}
+
+.setDiv ul li:nth-of-type(1), .setDiv ul li:nth-of-type(2) {
+    border: 0;
+}
+
+.setDiv ul li span {
+    display: inline-block;
+}
+
+.setDiv ul li div {
+    float: left;
+}
+
+.setDiv ul li:nth-of-type(1) div:nth-of-type(1) {
+    width: 63%;
+}
+
+.setDiv ul li {
+    list-style: none;
+    height: 43px;
+    background: #fff;
+    border-bottom: solid 1px #e4e7f0;
+    line-height: 43px;
+}
+
+.inputText,.heyuk {
+    height: 32.5px;
+    border: solid 1px #c0c6cd;
+    border-radius: 3px;
+    line-height: 32.5px;
+    font-size: 15px;
+    text-align: center;
+    width: 90%;
+}
+.heyuk{
+    margin-top:5px;
+}
+.setDiv ul li:nth-of-type(2) div {
+    width: 50%;
+    float: left;
+    padding-left: 4rem;
+}
+
+.select {
+    width: 20px;
+    height: 20px;
+    transform: translate(0%, 18%);
+}
+
+.set {
+    background: url(../images/selectin.png) no-repeat;
+    background-size: 20px 20px;
+}
+
+.unset {
+    background: url(../images/unselect.png) no-repeat 0 0;
+    background-size: 20px 20px;
+}
+
+#setinput {
+    float: right;
+    width: 58.4%;
+}
+
+#setinput input {
+    width: 100%;
+}
+
+.btnDiv {
+    text-align: center;
+    margin-top: 46px;
+}
+
+.btnSubmit {
+    width: 93%;
+    color: #fff;
+    background-color: #3366cc;
+    display: inline-block;
+    padding: 6px 9px;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-top: 4px;
+}
+
+.navbar-fixed-bottom {
+    bottom: 0;
+    border-width: 0 0 1px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    width: 100%;
+    font-size: 10px;
+    color: #808086;
+    background: #fffef2;
+    min-height: 44px;
+}
+.navbar-fixed-bottom>div{
+    width:18rem;
+    margin:0 auto;
+    padding:10px 0 10px 0;
+    line-height: 17px;
+}
+/*content end*/
+/*我的预警start*/
+#TableList,.TbodyInner{
+    background: #fff;
+}
+.TheadWrap {
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+    box-sizing: border-box;
+    background-clip: content-box;
+    display: flex;
+}
+.TheadWrap{
+    border-bottom: 1px solid #e4e7f0;
+}
+.detail{
+    position: relative;
+    left: -1px;
+}
+.detailOuter {
+    flex: 1;
+    overflow: hidden;
+}
+.static{
+    width:37.4%;
+}
+.staticBody{
+    width:348%;
+}
+.TbodyInner{
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+/*tr{
+    border-bottom:1px solid #e4e7f0;;
+}*/
+/*#myAlerted {*/
+    /*background: #fff;*/
+    /*width: 250%;*/
+/*}*/
+
+/*#myAlerted ul li {*/
+    /*background:#fff;*/
+    /*border-bottom: 1px solid #e4e7f0;*/
+/*}*/
+
+/*#myAlerted ul li span {*/
+    /*float: left;*/
+    /*display: inline-block;*/
+    /*font-size: 18px;*/
+/*}*/
+
+/*我的预警end*/

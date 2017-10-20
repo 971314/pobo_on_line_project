@@ -1,0 +1,19 @@
+/**
+ * Created by kuo zi on 2016/10/14.
+ */
+const restUrl = {
+    auth: {
+        name: "认证",
+        url: "member/auth"
+    },
+    newsBase: {
+        name: "新闻列表",
+        url: "newsBase/searchPage"
+    },
+    newsDetail: {
+        name: "新闻详情",
+        url: "newsBase/get"
+    }
+};
+
+export default restUrl;

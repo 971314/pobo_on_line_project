@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var data = [
+        {'159':'13:11:01','160':'2017-01-25'},
+        {'159':'19:11:01','160':'2017-01-05'},
+        {'159':'13:11:01','160':'2017-01-25'},
+        {'159':'18:11:01','160':'2017-01-02'},
+        {'159':'13:11:01','160':'2017-01-25'}
+    ]
+    function sortEntrust(arr) {
+        var nightArr = arr.filter(function (item) {
+            var timeStr = item['159'].replace(/\:/g, "");
+            return timeStr > '195959';
+        });
+        var todayArr = arr.filter(function (item) {
+            var timeStr = item['159'].replace(/\:/g, "");
+            return timeStr < '200000';
+        });
+        nightArr = nightArr.sort(function (item1, item2) {
+            var time1 = item1['159'].replace(/\:/g, "");
+            var time2 = item2['159'].replace(/\:/g, "");
+            return time2 - time1;
+        });
+        todayArr = todayArr.sort(function (item1, item2) {
+            var time1 = item1['160'].replace(/\-/g, "") + item1['159'].replace(/\:/g, "");
+            var time2 = item2['160'].replace(/\-/g, "") + item2['159'].replace(/\:/g, "");
+            return time2 - time1;
+        });
+        /*todayArr = todayArr.sort(function (item1, item2) {
+            var time1 = item1['160'].replace(/-/g, "");
+            var time2 = item2['160'].replace(/-/g, "");
+            return time2 - time1;
+        });*/
+        var newArr = [];
+        newArr = newArr.concat(todayArr, nightArr);
+        return newArr;
+    }
+    console.log(sortEntrust(data))
+</script>
+</body>
+</html>

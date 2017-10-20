@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbitems
+    updateDate="2016-07-21"
+    version="1.1">
+    
+    <item
+    fieldNO="5"
+    name="最新"
+    checked="1"
+    sortType="29"/>
+    
+    <item
+    fieldNO="17"
+    name="涨跌"
+    checked="1"
+    sortType="61"/>
+    
+    <item
+    fieldNO="23"
+    name="涨跌幅"
+    checked="1"
+    sortType="62"/>
+    
+    <item
+    fieldNO="8"
+    name="现手"
+    checked="1"
+    sortType="47"/>
+    
+    <item
+    fieldNO="6"
+    name="总手"
+    checked="1"
+    sortType="40"/>
+    
+    <item
+    fieldNO="7"
+    name="金额"
+    checked="1"
+    sortType="42"/>
+    
+    <item
+    fieldNO="27"
+    name="5分钟涨幅"
+    checked="1"
+    sortType="41"/>
+    
+    <item
+    fieldNO="15"
+    name="换手率"
+    checked="1"
+    sortType="43"/>
+    
+    <item
+    fieldNO="14"
+    name="量比"
+    checked="1"
+    sortType="35"/>
+    
+</pbitems>

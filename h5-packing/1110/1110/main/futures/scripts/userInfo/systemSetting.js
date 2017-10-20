@@ -1,0 +1,1 @@
+define("futures/scripts/userInfo/systemSetting.js",function(n,t,i){function o(){}function e(){$.bindEvent($(a+" .icon_back"),function(){window.location.href="goBack"})}function c(){}function s(){}function f(){}var a="#userInfo_systemSetting";n("validatorUtils");var u={init:o,bindPageEvent:e,destroy:c,pageBack:s,load:f};i.exports=u});

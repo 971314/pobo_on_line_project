@@ -1,0 +1,31 @@
+<template>
+    <div class="full-height">
+        <ui-carousel :carousels="carousels"></ui-carousel>
+        <ui-nav></ui-nav>
+    </div>
+</template>
+<script>
+import uiCarousel from "./../components/uiCarousel";
+import uiNav from "./../components/uiNav";
+export default {
+    components: {
+        "ui-carousel": uiCarousel,
+        "ui-nav": uiNav
+    },
+    data() {
+        return {
+            carousels: [],
+        }
+    },
+    created() {
+        
+    },
+    methods: {
+        
+    }
+}
+</script>
+<style lang="less">
+@import "./../assets/css/common.less";
+
+</style>

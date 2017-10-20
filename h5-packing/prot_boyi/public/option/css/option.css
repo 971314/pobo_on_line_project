@@ -1,0 +1,40 @@
+.cfg-nav{margin:13px -8px 0;border-top:1px solid #e4e7f0;border-bottom:1px solid #e4e7f0;background: #fff;}
+.cfg-nav:first-child{margin-top:5px;}
+.cfg-nav li{margin:0 0 0 10px;border-top:none;}
+.cfg-nav li+li{margin-top:0;margin-left:10px;}
+.cfg-nav li:last-child{border-bottom: none;}
+.cfg-nav li a{padding-left:0;}
+.cfg-nav li span{position: absolute;right:25px;top:8px;color:#bbb;font-size: 14px;}
+.cfg-nav li i{ 
+          position: absolute;
+          top: 17px;
+          right: 8px;
+          width: 7px;
+          height: 16px;
+          background:url(../../images/more.png);
+          background-size:100% 100%;
+    }
+.cfg-nav .hasSub i{
+    width:16px;
+    height:7px;
+    background-image:url(../../images/arrow-down.png);
+    top:22px;
+}
+.cfg-nav .showSubs .hasSub i{
+    background-image:url(../../images/arrow-up.png);
+}
+.cfg-nav .subs{border-top:1px solid #e4e7f0;font-size: 15px;display: none;}
+.cfg-nav .subs li a{color:#444;}
+.cfg-nav .showSubs .subs{display: block;}
+
+.cfg-funds-detail{padding-top:7px;}
+.cfg-funds-detail>div{margin-bottom:12px;float: left;
+  width: 48%;
+  padding: 8.5px 0;
+  border: 1px solid #e4e7f0;
+  background-color: #fff;
+  font-size: 14px;
+  text-align: center;}
+.cfg-funds-detail>div:nth-child(2n){margin-left:4%}
+.cfg-funds-detail p{margin-bottom: 5px;}
+.cfg-funds-detail p + p{margin-bottom: 0;}

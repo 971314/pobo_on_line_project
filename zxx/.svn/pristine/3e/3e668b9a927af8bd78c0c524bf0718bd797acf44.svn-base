@@ -1,0 +1,252 @@
+<template>
+    <div class="full-height">
+        <ui-head title="机构动向"></ui-head>
+        <div class="container">
+            <div class="share">最新更新时间:<span v-text="'2017-03-07 17:18'"></span><span class="btn-share"></span></div>
+            <div class="btn-group" style="padding :0 10px">
+                <button :class="{'active':show}" @click="show = true;queryAllFuturesExchange()">选择品种</button>
+                <router-link tag="button" :class="{'active':!show}" to="checkCompany">{{show?'选择公司':companyname}}</router-link>
+            </div>
+            <div v-show="show" class="select-group" style="padding:10px">
+                <div class="select" :class="{'active':showFuturesExchanges}" style="width:140px;" @click="showFuturesExchanges = !showFuturesExchanges">
+                    <div class="select-value" v-text="futuresExchange.exchName"></div>
+                    <div class="select-options">
+                        <div class="option" :class="{'active':f.exchId == futuresExchange.exchId}" v-for="f in futuresExchanges" v-text="f.exchName" @click="selectFuturesExchange(f)"></div>
+                    </div>
+                </div>
+                <div class="select" :class="{'active':showFuturesVaritys}" style="width:140px;" @click="showFuturesVaritys = !showFuturesVaritys">
+                    <div class="select-value" v-text="futuresVarity.chnName"></div>
+                    <div class="select-options">
+                        <div class="option" :class="{'active':f.varityCode == futuresVarity.varityCode}" v-for="f in futuresVaritys" v-text="f.chnName" @click="selectFuturesVarity(f)"></div>
+                    </div>
+                </div>
+                <div class="select" :class="{'active':showVarityCodes}" style="width:140px;" @click="showVarityCodes = !showVarityCodes">
+                    <div class="select-value" v-text="varityCode"></div>
+                    <div class="select-options">
+                        <div class="option" :class="{'active':varityCode == v}" v-for="v in varityCodes" v-text="v" @click="selectVarityCode(v)"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="hr-border-10"></div>
+            <div class="btn-tabs">
+                <div class="tabs" :class="{'active':typeId == 2}" @click="changeTypeId(2)">
+                    <button>多头持仓</button>
+                </div>
+                <div class="tabs" :class="{'active':typeId == 3}" @click="changeTypeId(3)">
+                    <button>空头持仓</button>
+                </div>
+                <div class="tabs" :class="{'active':typeId == 4}" @click="changeTypeId(4)">
+                    <button>净持仓</button>
+                </div>
+            </div>
+            <div class="hr-border-10"></div>
+            <div class="table" style="padding:0 10px;">
+                <div class="tr font-23 text-color17">
+                    <div class="th th1">序号</div>
+                    <div class="th">公司简介</div>
+                    <div class="th text-right">多头持仓</div>
+                    <div class="th text-right">多持增加</div>
+                    <div class="th text-right">多头均价</div>
+                </div>
+                <div class="tr font-26 text-color18">
+                    <div class="td td1 text-center"></div>
+                    <div class="td text-center">中信建投</div>
+                    <div class="td text-right text-color3">1808</div>
+                    <div class="td text-right text-color2">-30</div>
+                    <div class="td text-right">多头均价</div>
+                </div>
+                <div class="tr font-26 text-color18" v-for="(product,index) in productRanking">
+                    <div class="td td1 text-center" :class="index<3?'order'+index:'order'" v-text="index<3?'':index+1"></div>
+                    <div class="td text-center" v-text="product.name"></div>
+                    <div class="td text-right" v-text="product.volume">1808</div>
+                    <div class="td text-right" :class="{'text-color2':product.change > 0,'text-color3':product.change < 0}" v-text="product.change">-30</div>
+                    <div class="td text-right" v-text="product.priceAvg?product.priceAvg:'--'">多头均价</div>
+                </div>
+            </div>
+            <div class="hr"></div>
+            <div class="hr-border-10"></div>
+            <div class="btn-tabs tab-color">
+                <div class="tabs active">
+                    <button>相关新闻</button>
+                </div>
+                <div class="tabs">
+                    <button>品种研报</button>
+                </div>
+                <div class="tabs">
+                    <button>市场公告</button>
+                </div>
+            </div>
+            <div class="hr"></div>
+            <ui-infos :infos="news"></ui-infos>
+        </div>
+    </div>
+</template>
+<script>
+import uiInfos from "./../components/uiInfos.vue";
+export default {
+    components: {
+        "ui-infos": uiInfos
+    },
+    data() {
+        return {
+            companyid: this.$route.query.companyid,
+            companyname: this.$route.query.companyname,
+            typeId: 2,
+            news: [],
+            futuresExchange: {},
+            futuresExchanges: [],
+            showFuturesExchanges: false,
+            futuresVarity: {},
+            futuresVaritys: [],
+            showFuturesVaritys: false,
+            varityCode: "",
+            varityCodes: [],
+            showVarityCodes: false,
+            productRanking: []
+        }
+    },
+    created() {
+        this.$post("newsBase", {
+            pageNo: 1,
+            pageSize: this.pageSize,
+            tags: null,
+            part: null
+        }).then(res => {
+            this.news = res.results;
+        });
+        if (this.companyid) {
+            this.show = false;
+        } else {
+            this.show = true;
+            this.queryAllFuturesExchange();
+        }
+    },
+    methods: {
+        changeTypeId(typeId) {
+            if (this.typeId != typeId) {
+                this.typeId = typeId;
+                if (this.futuresVarity && this.futuresVarity.varityCode) {
+                    if (this.varityCode) {
+                        this.queryContractRankingByFuturesCode();
+                    } else {
+                        this.queryProductRankingByTypeId();
+                    }
+                }
+            }
+        },
+        queryAllFuturesExchange() {
+            this.$get([1, "queryAllFuturesExchange"]).then(res => {
+                this.futuresExchanges = res;
+            });
+        },
+        queryProductRankingByTypeId() {
+            this.$post([1, "queryProductRankingByTypeId"], {
+                pageNo: 1,
+                pageSize: this.pageSize,
+                needCount: 0,
+                tickerCode: this.futuresVarity.varityCode,
+                typeId: this.typeId
+            }).then(res => {
+                this.productRanking = res.results;
+            });
+        },
+        queryContractRankingByFuturesCode() {
+            this.$post([1, "queryContractRankingByFuturesCode"], {
+                pageNo: 1,
+                pageSize: this.pageSize,
+                needCount: 0,
+                tickerCode: this.varityCode,
+                typeId: this.typeId
+            }).then(res => {
+                this.productRanking = res.results;
+            });
+        },
+        selectFuturesExchange(f) {
+            this.futuresExchange = f;
+            this.futuresVarity = {};
+            this.varityCode = "";
+            this.$get([1, "queryFuturesVarityByExchId"], this.futuresExchange.exchId).then(res => {
+                this.futuresVaritys = res;
+            });
+        },
+        selectFuturesVarity(f) {
+            this.futuresVarity = f;
+            this.varityCode = "";
+            this.varityCodes = [];
+            let date = new Date();
+            for (let i = 0; i < 12; i++) {
+                let year = date.getYear() - 100;
+                let month = date.getMonth() + 1;
+                if (month + i > 12) {
+                    month = month + i - 12;
+                    year = year + 1;
+                } else {
+                    month = month + i;
+                }
+                if (month < 10) {
+                    month = "0" + month;
+                }
+                this.varityCodes.push(f.varityCode + year + month);
+            }
+            this.queryProductRankingByTypeId();
+        },
+        selectVarityCode(v) {
+            this.varityCode = v;
+            this.queryContractRankingByFuturesCode();
+        }
+    }
+}
+</script>
+<style lang="less">
+@import "./../assets/css/common.less";
+.share {
+    margin: 0 10px;
+    padding: 5px 0;
+    overflow: hidden;
+    .font-23;
+    .text-color17;
+    .btn-share {
+        float: right;
+        display: block;
+        width: 17px;
+        height: 20px;
+        background: url("./../assets/img/分享-默认.png") no-repeat center right;
+        background-size: 17px 17px;
+    }
+}
+
+.order {
+    position: relative;
+    line-height: 25px;
+    color: #fff;
+    font-size: 10px;
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        margin-top: -10px;
+        margin-left: -10px;
+        border-radius: 20px;
+        background: #f06c6a;
+    }
+}
+
+.order0 {
+    background: url(./../assets/img/2金牌.png) no-repeat center;
+    background-size: 15px 20px;
+}
+
+.order1 {
+    background: url(./../assets/img/2银牌.png) no-repeat center;
+    background-size: 15px 20px;
+}
+
+.order2 {
+    background: url(./../assets/img/2铜牌.png) no-repeat center;
+    background-size: 15px 20px;
+}
+</style>

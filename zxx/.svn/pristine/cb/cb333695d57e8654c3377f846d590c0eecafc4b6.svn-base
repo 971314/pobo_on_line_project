@@ -1,0 +1,109 @@
+/**
+ * Created by kuo zi on 2016/10/12.
+ */
+import Vue from "vue";
+import Router from "vue-router";
+
+import index from "./../view/indexNm";
+import home from "./../view/home";
+
+import institution from "./../view/institution.vue";
+import checkCompany from "./../view/checkCompany.vue";
+import institutionChart from "./../view/institutionChart.vue";
+import meeting from "./../view/meeting.vue";
+import meetingList from "./../view/meetingList.vue";
+import informationList from "./../view/informationList.vue";
+import signUp from "./../view/signUp.vue";
+import standardContract from "./../view/standardContract.vue";
+import mapList from "./../view/mapList.vue";
+import mapDetail from "./../view/mapDetail.vue";
+import marginComputed from "./../view/marginComputed.vue";
+import incomeComputed from "./../view/incomeComputed.vue";
+import nationalDebt from "./../view/nationalDebt.vue";
+import companyIntroduce from "./../view/companyIntroduce.vue";
+import detail from "./../view/detail.vue";
+
+Vue.use(Router);
+
+let routes = [{
+    name: "index",
+    path: "/index",
+    component: index
+}, {
+    name: "home",
+    path: "/home",
+    component: home
+}, {
+    name: "institution",
+    path: "/institution",
+    component: institution
+}, {
+    name: "checkCompany",
+    path: "/checkCompany",
+    component: checkCompany
+}, {
+    name: "institutionChart",
+    path: "/institutionChart",
+    component: institutionChart
+}, {
+    name: "meeting",
+    path: "/meeting",
+    component: meeting
+}, {
+    name: "meetingList",
+    path: "/meetingList",
+    component: meetingList
+}, {
+    name: "informationList",
+    path: "/informationList",
+    component: informationList
+}, {
+    name: "signUp",
+    path: "/signUp",
+    component: signUp
+}, {
+    name: "standardContract",
+    path: "/standardContract",
+    component: standardContract
+}, {
+    name: "mapList",
+    path: "/mapList",
+    component: mapList
+}, {
+    name: "mapDetail",
+    path: "/mapDetail",
+    component: mapDetail
+}, {
+    name: "marginComputed",
+    path: "/marginComputed",
+    component: marginComputed
+}, {
+    name: "incomeComputed",
+    path: "/incomeComputed",
+    component: incomeComputed
+}, {
+    name: "nationalDebt",
+    path: "/nationalDebt",
+    component: nationalDebt
+}, {
+    name: "companyIntroduce",
+    path: "/companyIntroduce",
+    component: companyIntroduce
+}, {
+    name: "detail",
+    path: "/detail",
+    component: detail
+}]
+
+let router = new Router({
+    // history模式需要后台支持
+    // mode: "history",
+    scrollBehavior: () => ({ y: 0 }),
+    routes: _.concat(routes)
+});
+//路由跳转钱操作
+router.beforeEach((to, form, next) => {
+    next();
+})
+
+export default router;

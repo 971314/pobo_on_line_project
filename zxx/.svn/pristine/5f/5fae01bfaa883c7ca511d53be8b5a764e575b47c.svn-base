@@ -1,0 +1,142 @@
+<template>
+    <div class="full-height">
+        <ui-head title="标准合约"></ui-head>
+        <div class="container">
+            <div class="flex">
+                <div class="hyxz">合约选择</div>
+                <div class="flex-1">
+                    <div class="select-group" style="padding:10px">
+                        <div class="select" style="width:140px;">
+                            <div class="select-value">上海期货交易所</div>
+                            <div class="select-options">
+                                <div class="option active">上海期货交易所</div>
+                                <div class="option">上海期货交易所1</div>
+                                <div class="option">上海期货交易所2</div>
+                                <div class="option">上海期货交易所2</div>
+                                <div class="option">上海期货交易所2</div>
+                                <div class="option">上海期货交易所2</div>
+                                <div class="option">上海期货交易所2</div>
+                                <div class="option">上海期货交易所2</div>
+                                <div class="option">上海期货交易所2</div>
+                            </div>
+                        </div>
+                        <div class="select">
+                            <div class="select-value">铜</div>
+                            <div class="select-options">
+                                <div class="option">铜1</div>
+                                <div class="option">铜2</div>
+                                <div class="option">铜3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contract-title">
+                基金信息
+            </div>
+            <div class="contract-line">
+                <label>品种</label>
+                <div>铜</div>
+            </div>
+            <div class="contract-line">
+                <label>代码</label>
+                <div>CU</div>
+            </div>
+            <div class="contract-line">
+                <label>交易所</label>
+                <div>上海期货交易所</div>
+            </div>
+            <div class="contract-line">
+                <label>合约单位</label>
+                <div>5吨/手</div>
+            </div>
+            <div class="contract-line">
+                <label>最小变动价位</label>
+                <div>10</div>
+            </div>
+            <div class="contract-line">
+                <label>最大下单手数</label>
+                <div>500</div>
+            </div>
+            <div class="contract-line">
+                <label>最后交易日</label>
+                <div>合约月份的15日(法定借节日顺延)</div>
+            </div>
+            <div class="contract-line">
+                <label>交易时间</label>
+                <div>
+                    夜盘：21：00-1：00
+                    <br> 白盘：9：00-10：15 10：30-11：30 13：30-15：00
+                    <br>
+                </div>
+            </div>
+            <div class="contract-line">
+                <label>最后交易日
+                    <br>交易时间</label>
+                <div>9：00-10：15 10：30-11：30</div>
+            </div>
+            <div class="contract-line">
+                <label>交割月交易单位</label>
+                <div>5手</div>
+            </div>
+            <div class="contract-title">
+                保证金
+            </div>
+            <div class="contract-line">
+                <label>合约挂牌之日起</label>
+                <div>9%</div>
+            </div>
+            <div class="contract-line">
+                <label>交割月前一月第
+                    <br>一个交易日起</label>
+                <div>交易月前一个月第一个交易日起：
+                    <br>10%（+1%）</div>
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+export default {
+    name: 'demoComponent',
+    data() {
+        return {
+
+        }
+    }
+}
+</script>
+<style lang="less">
+@import "./../assets/css/common.less";
+.hyxz {
+    line-height: 45px;
+    padding-left: 10px;
+}
+
+.contract-title {
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background: #ececec;
+    .font-10;
+    .text-color18;
+}
+
+.contract-line {
+    display: flex;
+    min-height: 30px;
+    border-bottom: 1px solid @color23;
+    >label {
+        width: 120px;
+        padding: 5px 0 5px 10px;
+        border-right: 1px solid @color23;
+        .font-23;
+        .text-color17;
+    }
+    >div {
+        flex: 1;
+        padding: 5px 0 5px 10px;
+        .font-23;
+        .text-color18;
+    }
+}
+</style>

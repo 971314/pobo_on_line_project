@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>条件单</title>
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/common.css" rel="stylesheet">
+    <link href="../css/condition.css" rel="stylesheet">
+</head>
+<body>
+<!-- 模态框（Modal） -->
+<div id="conditionList">
+    <div class="modal  dialog-info" id="noneTuchDialog" tabindex="-1" role="dialog"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="border-radius: 10px;">
+                <div class="modal-body dialog-bottom">
+                    <a href="#setTuch" id="editCondition" data-toggle="tab" data-dismiss="modal"
+                       @click="editConditionClick()">修改</a>
+                </div>
+                <div class="modal-body dialog-bottom" data-dismiss="modal">
+                    暂停
+                </div>
+                <div class="modal-body dialog-bottom" data-dismiss="modal">
+                    删除
+                </div>
+                <div class="modal-body dialog-bottom" style="border-bottom: none;" data-dismiss="modal">
+                    全部删除
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navInfo navbar-fixed-top">
+        <div class="titleBack"><a href="#"><img src="../../images/goback.png"> </a></div>
+        <div class="nav-title"> 条件单</div>
+        <div class="navThree">
+            <img src="../../images/refresh.png" width="18px" height="18px" v-if="initImg">
+            <span v-else="orSet" class="navThreeTitle">{{reSetValue}}</span>
+        </div>
+    </nav>
+    <div class="divFixed">
+        <div v-bind:class="{conditionDiv : noneTouchOne, noneRight: noneTouchOne, touchConditionDiv: isTouchOne}"
+             @click="touchClick(0)">
+            <a href="#noneTuch" data-toggle="tab">未触发列表</a>
+        </div>
+        <div v-bind:class="{conditionDiv : noneTouchTwo, noneRight: noneTouchTwo, touchConditionDiv: isTouchTwo}"
+             @click="touchClick(1)">
+            <a href="#isTuch" data-toggle="tab"> 已触发列表</a>
+        </div>
+        <div v-bind:class="{conditionDiv : noneTouchThree, touchConditionDiv: isTouchThree}" @click="touchClick(2)">
+            <a href="#setTuch" data-toggle="tab">条件单设置</a>
+        </div>
+    </div>
+    <div class="splitLine"></div>
+    <div class="table-top tab-content">
+        <div class="tab-pane fade in active divTable" id="noneTuch">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>合约</th>
+                    <th>状态</th>
+                    <th>类型</th>
+                    <th>条件单名称</th>
+                    <th>创建时间</th>
+                    <th>备注</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr data-toggle="modal" data-target="#noneTuchDialog">
+                    <td>测试</td>
+                    <td class="greenTd">运行</td>
+                    <td>时间</td>
+                    <td>测试1</td>
+                    <td>2016-09-09</td>
+                    <td>测试</td>
+                </tr>
+                <tr data-toggle="modal" data-target="#noneTuchDialog">
+                    <td>测试</td>
+                    <td class="redTd">暂停</td>
+                    <td>时间</td>
+                    <td>测试1</td>
+                    <td>2016-09-09</td>
+                    <td>测试</td>
+                </tr>
+                </tbody>
+            </table>
+            <!--<div  class="noneDivData" v-else>-->
+            <!--<img src="../../image/index/loading.gif" class="loadingImgOne">-->
+            <!--<span class="loadingFont">处理中...</span>-->
+            <!--</div>-->
+            <!--<template v-if="currentTrustList.data && currentTrustList.data.length ==0">-->
+            <!--<div  class="noneData">暂无交易记录！</div>-->
+            <!--</template>-->
+        </div>
+        <div class="tab-pane divTable" id="isTuch">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>合约</th>
+                    <th>状态</th>
+                    <th>类型</th>
+                    <th>条件单名称</th>
+                    <th>创建时间</th>
+                    <th>备注</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr data-toggle="modal" data-target="#noneTuchDialog">
+                    <td>测试</td>
+                    <td class="greenTd">运行</td>
+                    <td>时间</td>
+                    <td>测试1</td>
+                    <td>2016-09-09</td>
+                    <td>测试</td>
+                </tr>
+                <tr data-toggle="modal" data-target="#noneTuchDialog">
+                    <td>测试</td>
+                    <td>运行</td>
+                    <td>时间</td>
+                    <td>测试1</td>
+                    <td>2016-09-09</td>
+                    <td>测试</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane" style="margin-top: 36px;" id="setTuch">
+            <!--条件单添加-->
+            <div v-if="initSetAdd">
+                <div class="setDiv">
+                    <div class="setOut">
+                        <ul>
+                            <li>
+                                <div class="setDivOne">
+                                    <input type="text" class="inputText" placeholder="选择期货合约"/>
+                                </div>
+                                <div class="setDivTwo">最新：</div>
+                                <div class="setDivThree">2323</div>
+                            </li>
+                            <li>
+                                <div class="conOne">有效期</div>
+                                <div class="conTwo">
+                                    <span v-bind:class="[validPrice ? 'conSpanOne' : 'conSpanThree']"
+                                          @click="validDateClick(0)">当日</span>
+                                    <span v-bind:class="[validTime ? 'conSpanTwo' : 'conSpanFour']"
+                                          @click="validDateClick(1)">永久</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="conOne">条件</div>
+                                <div class="conTwo">
+                                    <span v-bind:class="[conPrice ? 'conSpanOne' : 'conSpanThree']"
+                                          @click="conditionClick(0)">价格</span>
+                                    <span v-bind:class="[conTime ? 'conSpanTwo' : 'conSpanFour']"
+                                          @click="conditionClick(1)">时间</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="priceOne">
+                                    <input type="text"/>
+                                </div>
+                                <div class="priceTwo"></div>
+                                <div class="priceThree">
+                                    <input type="text" placeholder="价格"/>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="conOne">买卖方向</div>
+                                <div class="conTwo">
+                                    <span v-bind:class="[buyPrice ? 'conSpanOne' : 'conSpanThree']"
+                                          @click="buyClick(0)">买</span>
+                                    <span v-bind:class="[buyTime ? 'conSpanTwo' : 'conSpanFour']"
+                                          @click="buyClick(1)">卖</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="conTypeOne">类型</div>
+                                <div class="conTypeTwo">
+                                    <span v-bind:class="{conSpanTyeOne:openCang, conSpanTyeOneBlue:openCangFFF}"
+                                          @click="storehouseTypeClick(0)">开仓</span>
+                                    <span v-bind:class="{conSpanTyeTwo:pingCang, conSpanTyeTwoBlue:pingCangBlue}"
+                                          @click="storehouseTypeClick(1)">平仓</span>
+                                    <span v-bind:class="{conSpanTyeThree:pingDay, conSpanTyeThreeBlue:pingDayBlue}"
+                                          @click="storehouseTypeClick(2)">平今</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="conOne">委托价格</div>
+                                <div class="conTwo">
+                                    <span class="market">市价</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="conOne">委托数量</div>
+                                <div class="conTwo">
+                                    <span class="market">1</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="btnDiv">
+                    <button type="button" class="btnSubmit" data-toggle="button">
+                        添加
+                    </button>
+                </div>
+            </div>
+            <!--条件单添加end-->
+            <!--条件单编辑-->
+            <div v-else="editSetDiv">
+                <div class="setDiv">
+                    <div class="setOut">
+                        <ul>
+                            <li>
+                                <div class="setDivOne">
+                                    <input type="text" class="inputText" placeholder="选择期货合约"/>
+                                </div>
+                                <div class="setDivTwo">最新：</div>
+                                <div class="setDivThree">2323</div>
+                            </li>
+                            <li>
+                                <div class="conOne">条件</div>
+                                <div class="conTwo">
+                                    <span v-bind:class="[conPrice ? 'conSpanOne' : 'conSpanThree']"
+                                          @click="conditionClick(0)">价格</span>
+                                    <span v-bind:class="[conTime ? 'conSpanTwo' : 'conSpanFour']"
+                                          @click="conditionClick(1)">时间</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="conOne">有效期</div>
+                                <div class="conTwo">
+                                    <span v-bind:class="[validPrice ? 'conSpanOne' : 'conSpanThree']"
+                                          @click="validDateClick(0)">当日</span>
+                                    <span v-bind:class="[validTime ? 'conSpanTwo' : 'conSpanFour']"
+                                          @click="validDateClick(1)">永久</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="priceOne">
+                                    <input type="text"/>
+                                </div>
+                                <div class="priceTwo"></div>
+                                <div class="priceThree">
+                                    <input type="text" placeholder="价格"/>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="conOne">买卖方向</div>
+                                <div class="conTwo">
+                                    <span v-bind:class="[buyPrice ? 'conSpanOne' : 'conSpanThree']"
+                                          @click="buyClick(0)">买</span>
+                                    <span v-bind:class="[buyTime ? 'conSpanTwo' : 'conSpanFour']"
+                                          @click="buyClick(1)">卖</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="conTypeOne">类型</div>
+                                <div class="conTypeTwo">
+                                    <span v-bind:class="{conSpanTyeOne:openCang, conSpanTyeOneBlue:openCangFFF}"
+                                          @click="storehouseTypeClick(0)">开仓</span>
+                                    <span v-bind:class="{conSpanTyeTwo:pingCang, conSpanTyeTwoBlue:pingCangBlue}"
+                                          @click="storehouseTypeClick(1)">平仓</span>
+                                    <span v-bind:class="{conSpanTyeThree:pingDay, conSpanTyeThreeBlue:pingDayBlue}"
+                                          @click="storehouseTypeClick(2)">平今</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="conOne">委托价格</div>
+                                <div class="conTwo">
+                                    <span class="market">市价</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="conOne">委托数量</div>
+                                <div class="conTwo">
+                                    <span class="market">1</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="btnDiv">
+                    <button type="button" class="btnSubmit" data-toggle="button">
+                        编辑
+                    </button>
+                </div>
+            </div>
+            <!--条件单编辑end-->
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../../js/vue.js"></script>
+<script type="text/javascript" src="../../../js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="../../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../js/PB.Page.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+<script type="text/javascript" src="../js/feture-condition-list.js"></script>
+<script>
+//        window.onscroll = function () {
+//            var height = document.documentElement.scrollTop || document.body.scrollTop;
+//            var width = document.documentElement.scrollLeft || document.body.scrollLeft;
+//            if(height > 0){
+//              $(".tableDivOne").css('position','absolute')
+//              $(".tableDivOne").css('z-index','-1' )
+//            }else  if(width > 0){
+//                $(".tableDivOne").css('position','fixed')
+//                $(".tableDivOne").css('z-index','0' )
+//            }
+//        }
+</script>
+</html>

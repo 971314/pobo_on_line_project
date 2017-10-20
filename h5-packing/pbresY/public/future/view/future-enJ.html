@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>当日委托</title>
+
+    <!-- Bootstrap -->
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/common.css" rel="stylesheet">
+    <style>
+        .nav-blank {
+            background-color: #f7f7fa;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        #title {
+            position: fixed;
+            height: 41px;
+            left: 0;
+            top: 9px;
+            width: 100%;
+            overflow: hidden;
+            padding-left: 8px;
+            padding-right: 8px;
+            z-index: 100;
+        }
+
+        .my-modal {
+            z-index: 1000;
+        }
+
+        #contents {
+            padding-top: 50px;
+            z-index: 10;
+        }
+
+        .four-title {
+            color: #52668c;
+        }
+
+        /*.contents-fixed {position: fixed; overflow: hidden; padding-left: 8px; padding-right: 8px; left: 0; top: 0; width: 100%;}*/
+        .btn-3b0 {
+            background-color: #e4e4e4;
+            color: #000;
+            height: 50px;
+            line-height: 40px;
+        }
+
+        #indicate {
+            width: 60%;
+            position: absolute;
+            left: 20%;
+            z-index: 1500;
+        }
+
+        .deal0, .deal1, .deal2, .deal3 {
+            line-height: 2rem;
+        }
+
+        div[id^="hideBox"] {
+            height: auto;
+        }
+
+        .pd24t {
+            padding-left: .3rem;
+        }
+    </style>
+</head>
+<body class="entrust-body">
+<div class="nav-blank"></div>
+
+<div class="container-fluid">
+    <div class="clearfix">
+        <div id="title">
+            <div class="row four-title">
+                <div class="col-my-11 text-left">合约名称</div>
+                <div class="col-my-13 text-right">方向</div>
+                <div class="col-my-11 text-center">价/量</div>
+                <div class="col-my-13 status text-right">
+                    <span data-reactid=".0.3.0">状态</span>
+                    <span id="order" data-reactid=".0.3.1"></span>
+                </div>
+            </div>
+        </div>
+        <div id="contents">
+            <!--委托列表-->
+
+            <!--撤单弹框-->
+
+        </div>
+    </div>
+</div>
+
+<!--<div class="my-modal hide" id="indicate">
+  <div class="my-modal-backdrop"></div>
+    <div class="row btn-login">
+    <div class="col-center">
+      <a class="btn btn-block btn-3b0">撤单请求已发送</a>
+    </div>
+  </div>
+</div>-->
+
+<div class="col-center hide" id="indicate">
+    <a class="btn btn-block btn-3b0">撤单请求已发送</a>
+</div>
+<script id="tpl" type="text/template">
+    {@each dataHis as it, i}
+    <div class="folder-row">
+        <div class="row content" onclick="fold(${i})">
+            <div class="col-my-11 text-left">
+                <p class="a1 name-row">
+                                <span class="display-table-cell">
+                                    {@if it["name"]}
+                                    ${it["name"]}
+                                    {@else if it["64"]}
+                                    ${it["64"]}
+                                    {@else}
+                                    ${it["63"]}
+                                    {@/if}
+                                </span>
+                </p>
+                <p class="d2 time-row">
+                    <span class="display-table-cell">${it["159"]}</span>
+                </p>
+            </div>
+            <div class="col-my-13 text-right">
+                {@if it["112"] == 0 && it["117"] == 0}
+                <p class="b3 lh55">买开</p>
+                {@else if it["112"] == 1 && it["117"] == 0}
+                <p class="b4 lh55">卖开</p>
+                {@else if it["112"] == 0 && it["117"] == 1}
+                <p class="b3 lh55">买平</p>
+                {@else if it["112"] == 1 && it["117"] == 1}
+                <p class="b4 lh55">卖平</p>
+                {@else if it["112"] == 0 && it["117"] == 2}
+                <p class="b3 lh55">买平今</p>
+                {@else if it["112"] == 1 && it["117"] == 2}
+                <p class="b4 lh55">卖平今</p>
+                {@/if}
+            </div>
+            <div class="col-my-11 text-center">
+                <p class="b1 lh28">
+                    {@if it["40"] != undefined && it["40"] != "2"}
+                    市价
+                    {@else}
+                    ${it["129"]|floatToFixed}
+                    {@/if}
+                </p>
+                <p class="b1 lh27">
+                    <span class="b3">
+                    ${it["113"]|floatToFixed}
+                    </span>
+                    <span>&nbsp;|&nbsp;</span>
+                    <span>
+                        ${it['130']|floatToFixed}
+                    </span>
+                </p>
+            </div>
+            <div class="col-my-13 text-right">
+                {@if it["163"] && it["163"] != "" && it["163"].replace(/(^\s*)|(\s*$)/g, "").length > 0}
+                <img src="../images/arrow-down.png" class="pd24t pull-right" alt="更多" id="arrow${i}">
+                {@/if}
+                {@if it["156"] == 3}
+                <p class="b4 lh55">已成</p>
+                {@else if it["156"] == 4}
+                <p class="b4 lh55">已撤</p>
+                {@else if it["156"] == 1}
+                <div>
+                    <p class="b1 lh28">已报</p>
+                    <p class="lh27">
+                        <input class="btn btn-my-xs bgc-fe0000 btnCancel" cid="${i}" type="button" value="撤单"/>
+                    </p>
+                </div>
+                {@else if it["156"] == 6}
+                <div>
+                    <p class="b1 lh28">待撤</p>
+                    <p class="lh27">
+                        <input class="btn btn-my-xs bgc-fe0000 btnCancel" cid="${i}" type="button" value="撤单"/>
+                    </p>
+                </div>
+                {@else if it["156"] == 8}
+                <div>
+                    <p class="b1 lh28">待改</p>
+                    <p class="lh27">
+                        <input class="btn btn-my-xs bgc-fe0000 btnCancel" cid="${i}" type="button" value="撤单"/>
+                    </p>
+                </div>
+                {@else if it["156"] == "h"}
+                <div>
+                    <p class="b1 lh28">挂起</p>
+                    <p class="lh27">
+                        <input class="btn btn-my-xs bgc-fe0000 btnCancel" cid="${i}" type="button" value="撤单"/>
+                    </p>
+                </div>
+                {@else if it["156"] == "p"}
+                <div>
+                    <p class="b1 lh28">本地开盘触发</p>
+                    <p class="lh27">
+                        <input class="btn btn-my-xs bgc-fe0000 btnCancel" cid="${i}" type="button" value="撤单"/>
+                    </p>
+                </div>
+                {@else if it["156"] == 2}
+                <div>
+                    <p class="b1 lh28">部成</p>
+                    <p class="lh27">
+                        <input class="btn btn-my-xs bgc-fe0000 btnCancel" cid="${i}" type="button" value="撤单"/>
+                    </p>
+                </div>
+                {@else if it["156"] == 5}
+                <p class="b4 lh55">部撤</p>
+                {@else if it["156"] == 0}
+                <div>
+                    <p class="b1 lh28">正报</p>
+                    <p class="lh27">
+                        <input class="btn btn-my-xs bgc-fe0000 btnCancel" cid="${i}" type="button" value="撤单"/>
+                    </p>
+                </div>
+                {@else if it["156"] == "e"}
+                <p class="b4 lh55">废单</p>
+                {@else if it["156"] == "x"}
+                <div>
+                    <p class="b1 lh28">未知</p>
+                    <p class="lh27">
+                        <input class="btn btn-my-xs bgc-fe0000 btnCancel" cid="${i}" type="button" value="撤单" />
+                    </p>
+                </div>
+                {@/if}
+            </div>
+        </div>
+    </div>
+    {@if it["163"] && it["163"] == "" && it["163"].replace(/(^\s*)|(\s*$)/g, "").length > 0}
+    <div class="hide" id="hideB0">
+        <div class="rowcol-xs-12 deal2">
+            <span>备注：</span>
+            <span>备注信息</span>
+        </div>
+    </div>
+    {@/if}
+    {@/each}
+    <div class="my-modal hide" id="cancel">
+              <div class="my-modal-backdrop"></div>
+              <div class="my-modal-dialog">
+                <p class="title">撤&nbsp;&nbsp;单</p>
+                <div class="row">
+                  <div class="col-my-19">
+                    <span>合约名称：</span>
+                    <span class="l64"></span>
+                  </div>
+                  <div class="col-my-20">
+                    <span>交易所：</span>
+                    <span class="l54"></span>
+                </div>
+                <div class="row">
+                  <div class="col-my-19">
+                    <span>委托时间：</span>
+                    <span class="l159"></span>
+                  </div>
+                  <div class="col-my-20">
+                    <span>操作方向：</span>
+                    <span class="l112-117"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-my-19">
+                    <span>委托价格：</span>
+                    <span class="l129"></span>
+                  </div>
+                <div class="col-my-20">
+                  <span>委托数量：</span>
+                  <span class="l130"></span>
+                </div>
+                </div>
+                <div class="row btn-bottom">
+                  <input class="btn btn-3d0" type="button" value="是" onclick="cancelOrders()">
+                  <input class="btn btn-6d1" type="button" value="否" onclick="hideConfirm()">
+                </div>
+              </div>
+            </div>
+    </div>
+</script>
+<!--<script src="../../../js/react.min.js"></script>-->
+<!--<script src="../../../js/react-dom.min.js"></script>-->
+<script src="../../../js/jquery-2.2.0.min.js"></script>
+<!--<script src="../../../js/vue.js"></script>-->
+<script src="../../../js/juicer.js"></script>
+<script src="../../js/futures-common.js"></script>
+<script src="../../js/plugins.js"></script>
+<script src="../js/future-enJ.js"></script>
+
+</body>
+</html>

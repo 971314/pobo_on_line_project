@@ -1,0 +1,159 @@
+<template>
+    <div class="full-height">
+        <ui-head title="培训信息"></ui-head>
+        <div class="container">
+            <div>
+                <mt-cell title="会议活动" to="//github.com" is-link value="更多">
+                    <span class="hyhd" slot="icon"></span>
+                </mt-cell>
+                <div class="hr"></div>
+                <div class="hy-list flex bg-color22 font-23 text-color17" style="height: 25px;">
+                    <div>地点</div>
+                    <div>时间</div>
+                    <div>嘉宾</div>
+                    <div class="zt">
+                        <div class="ellipsis">
+                            主题
+                        </div>
+                    </div>
+                    <div>报名</div>
+                </div>
+                <div class="hy-list flex font-23 text-color18">
+                    <div>地点</div>
+                    <div>03/07
+                        <br>周三</div>
+                    <div>嘉宾</div>
+                    <div class="zt">
+                        <div class="ellipsis">
+                            主题主题主题主题主题主题主题主题主题主题主题主题主题主题主题主题主题主题
+                        </div>
+                    </div>
+                    <div class="bm"></div>
+                </div>
+            </div>
+            <div class="hr-10"></div>
+            <div>
+                <mt-cell title="市场活动" is-link value="更多">
+                    <span class="hyhg" slot="icon"></span>
+                </mt-cell>
+                <div class="hr"></div>
+                <div class="sc-list">
+                    <div class="sc-img">
+                        <img src="./../assets/img/1-1交易日记-默认.png">
+                    </div>
+                    <div class="sc-info">
+                        <div style="padding:5px;">
+                            <div class="ellipsis font-10 text-color18">
+                                开户签约开户签约开户签约开户签约开户签约开户签约开户签约
+                            </div>
+                            <div class="ellipsis font-13 text-color17">
+                                03/09-03/10
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sc-state text-color17">
+                        已结束
+                    </div>
+                </div>
+                <div class="sc-list">
+                    <div class="sc-img">
+                        <img src="./../assets/img/1-1交易日记-默认.png">
+                    </div>
+                    <div class="sc-info">
+                        <div style="padding:5px;">
+                            <div class="ellipsis font-10 text-color18">
+                                开户签约开户签约开户签约开户签约开户签约开户签约开户签约
+                            </div>
+                            <div class="ellipsis font-13 text-color17">
+                                03/09-03/10
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sc-state text-color2">
+                        进行中
+                    </div>
+                </div>
+            </div>
+            <div class="hr-10"></div>
+            <div>
+                <mt-cell title="会议回顾" is-link value="更多">
+                    <span class="hyhg" slot="icon"></span>
+                </mt-cell>
+                <div class="hr"></div>
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+</script>
+<style lang="less">
+@import "./../assets/css/common.less";
+.hyhd,
+.hyhg {
+    display: inline-block;
+    width: 10px;
+    height: 8px;
+    background: no-repeat center;
+    background-size: 8px;
+}
+
+.hyhd {
+    background-image: url(./../assets/img/b-会议活动.png);
+}
+
+.hyhg {
+    background-image: url(./../assets/img/b-会议回顾.png);
+}
+
+.hy-list {
+    border-bottom: 1px solid @hr;
+    height: 38px;
+    >div {
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &.zt {
+            flex: 1;
+            position: relative;
+            text-align: left;
+            >div {
+                position: absolute;
+                width: 100%;
+            }
+        }
+        &.bm {
+            // background: url();
+        }
+    }
+}
+
+.sc-list {
+    display: flex;
+    border-bottom: 1px solid @hr;
+    height: 50px;
+    .sc-img {
+        padding: 5px 10px;
+        >img {
+            height: 100%;
+        }
+    }
+    .sc-info {
+        flex: 1;
+        position: relative;
+        text-align: left;
+        >div {
+            position: absolute;
+            width: 100%;
+        }
+    }
+    .sc-state {
+        width: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .font-26;
+        padding-right: 10px;
+    }
+}
+</style>

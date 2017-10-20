@@ -1,0 +1,1 @@
+try{var CID=pbE.WT().wtGetCurrentConnectionCID()}catch(t){}

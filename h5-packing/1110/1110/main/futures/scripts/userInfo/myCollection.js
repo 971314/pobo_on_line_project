@@ -1,0 +1,1 @@
+define("futures/scripts/userInfo/myCollection.js",function(n,o,i){function t(){}function c(){$.bindEvent($(u+" .icon_back"),function(){window.location.href="goBack"})}function e(){}function f(){}function a(){}var u="#userInfo_myCollection";n("validatorUtils");var r={init:t,bindPageEvent:c,destroy:e,pageBack:f,load:a};i.exports=r});

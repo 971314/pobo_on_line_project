@@ -1,0 +1,1 @@
+define(function(n,t,e){function o(n){$(n).addClass("gray"),$(n).unbind()}function a(n,t){$(n).removeClass("gray"),$.bindEvent(n,function(n){n.stopPropagation(),"function"==typeof t&&t()})}var i={setBtnDisable:o,setBtnUsable:a};e.exports=i});

@@ -1,0 +1,1 @@
+define("futures/scripts/userInfo/transactionSetting.js",function(n,t,i){function o(){}function a(){$.bindEvent($(r+" .icon_back"),function(){window.location.href="goBack"})}function c(){}function e(){}function f(){}var r="#userInfo_transactionSetting";n("validatorUtils");var s={init:o,bindPageEvent:a,destroy:c,pageBack:e,load:f};i.exports=s});

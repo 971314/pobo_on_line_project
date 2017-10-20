@@ -1,0 +1,41 @@
+<template>
+    <div class="full-height">
+        <ui-head title="交易日历"></ui-head>
+        <div class="container" style="padding:0 10px;">
+            <vue-event-calendar :events="tradeEvents"></vue-event-calendar>
+        </div>
+    </div>
+</template>
+<script>
+export default {
+    data() {
+            return {
+                tradeEvents: [{
+                    date: "2017/03/19",
+                    title: "eat",
+                    desc: "描述描述描述",
+                }, {
+                    date: "2017/03/21",
+                    title: "哈哈",
+                    desc: "描述描述描述",
+                }]
+            }
+        },
+        created() {
+            this.$post("newsBase", {
+                pageNo: 1,
+                pageSize: 100,
+                needCount: 0,
+                dateStart: "2007-01-01",
+                dateEnd: "2027-01-01",
+                part: null,
+                tags: null
+            }).then(res => {
+
+            });
+        }
+
+}
+</script>
+<style>
+</style>

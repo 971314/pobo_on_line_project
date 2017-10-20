@@ -1,0 +1,22 @@
+html,body{
+    margin:10px 0 0 10px;
+}
+ul,li{
+    padding:0;
+    margin:0;
+    list-style: none;
+    margin-bottom: 21px;
+}
+.btnadd{
+    margin-bottom: 18px;
+    display:block;
+}
+img,button{
+    margin-right:31px;
+}
+.img{
+    display:inline-block;
+    width:97px;
+    height:97px;
+    background:url("../images/da1.png") no-repeat 0;
+}

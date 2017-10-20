@@ -1,0 +1,76 @@
+{
+    "index":[{
+                "name": "行权",
+                "url": "pobo:uncheck=0&pageId=802204"
+            },
+            {
+                "name": "备兑锁定、解锁",
+                "url": "pobo:uncheck=0&pageId=802208"
+            },
+            {
+                "name": "资金现状",
+                "url": "pobo:uncheck=0&pageId=902307&url=option/view/option-st.html"
+            },
+            {
+                "name": "更多",
+                "url": "",
+                "subs": [
+                    {
+                        "name": "行权",
+                        "url": "pobo:uncheck=0&pageId=802204",
+                        "desc": "行权"
+                    },
+                    {
+                        "name": "备兑锁定、解锁",
+                        "url": "pobo:uncheck=0&pageId=802208",
+                        "desc": "备兑锁定、解锁"
+                    }
+                ]
+            }],
+    "more":{
+        "group1": [
+            {
+                "name": "备兑锁定、解锁",
+                "url": "pobo:uncheck=0&pageId=802208"
+            }],
+        "group2": [   
+            {
+                "name": "历史成交",
+                "url": "option-history-deal.html"
+            },
+            {
+                "name": "历史委托",
+                "url": "option-history-entrust.html"
+            },
+            {
+                "name": "资金现状",
+                "url": "option-st.html"
+            },
+            {
+                "name": "更多",
+                "url": "",
+                "subs": [
+                    {
+                        "name": "行权",
+                        "url": "pobo:uncheck=0&pageId=802204",
+                        "desc": "行权"
+                    },
+                    {
+                        "name": "备兑锁定、解锁",
+                        "url": "pobo:uncheck=0&pageId=802208",
+                        "desc": "备兑锁定、解锁"
+                    }
+                ]
+            }],
+        "group3": [{
+                "name": "银衍转账",
+                "url": "option-transfer-query.html"
+            }],
+        "group4": [{
+                "name": "修改密码",
+                "url": "pobo:uncheck=0&pageId=802004"
+            }]},
+    "dealHides": [],
+    "entrustHides": [],
+    "fundHides": []
+}

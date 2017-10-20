@@ -1,0 +1,24 @@
+<template>
+    <div class="full-height" style="padding:0 10px;">
+        <vue-event-calendar :events="tradeEvents"></vue-event-calendar>
+    </div>
+</template>
+<script>
+export default {
+    data() {
+        return {
+            tradeEvents: [{
+                date: "2017/03/19",
+                title: "eat",
+                desc: "描述描述描述",
+            }, {
+                date: "2017/03/21",
+                title: "哈哈",
+                desc: "描述描述描述",
+            }]
+        }
+    }
+}
+</script>
+<style>
+</style>

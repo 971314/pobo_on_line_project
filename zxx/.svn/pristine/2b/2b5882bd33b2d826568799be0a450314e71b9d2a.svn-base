@@ -1,0 +1,28 @@
+<template>
+    <div class="full-height bg-color22">
+        <div class="btn-tabs">
+            <div class="tabs" :class="{'active':show == 1}">
+                <button @click="show = 1">公司简介</button>
+            </div>
+            <div class="tabs" :class="{'active':show == 2}">
+                <button @click="show = 2">人才招聘</button>
+            </div>
+        </div>
+        <div class="hr"></div>
+        <div v-show="show == 1">1</div>
+        <div v-show="show == 2">2</div>
+    </div>
+</template>
+<script>
+export default {
+    data() {
+        return {
+            show: 1
+        }
+    }
+}
+</script>
+<style lang="less">
+@import "./../assets/css/common.less";
+
+</style>

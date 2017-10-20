@@ -1,0 +1,21 @@
+<template>
+    <div class="full-height">
+        <ui-head title="机构动向"></ui-head>
+        <div class="container">
+            <div class="list" v-for="i in 10">
+                <div class="list-info">
+                    <div class="info-title">深交所：紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯紧盯</div>
+                    <div class="info-more">03-05 17:35</div>
+                </div>
+                <div class="list-img">
+                    <img>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+</script>
+<style lang="less">
+@import "./../assets/css/common.less";
+</style>

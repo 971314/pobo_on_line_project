@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbmarkets version="2.2" updateDate="2016-07-13">
+    <pbmarket name="LME" id="812" default="1">
+        <image normal="lme.png" focus="lme.png" />
+        <MenuName title="" zsGroupCode="">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="LMEDZ" MarketID="4000"/>
+                <Rule Category="MarketAndGroup" GroupCode="LMECW" MarketID="4000"/>
+                <Rule Category="MarketAndGroup" GroupCode="LMEXH" MarketID="4000"/>
+            </Rules>
+        </MenuName>
+    </pbmarket>
+    <pbmarket name="CME金属" id="840" default="1">
+        <image normal="yinhang.png" focus="yinhang.png" />
+        <MenuName title="美精铜" zsGroupCode="">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="COMEX1" MarketID="5000"/>
+            </Rules>
+        </MenuName>
+        <MenuName title="美黄金" zsGroupCode="">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="COMEX2" MarketID="5000"/>
+            </Rules>
+        </MenuName>
+        <MenuName title="美白银" zsGroupCode="">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="COMEX3" MarketID="5000"/>
+            </Rules>
+        </MenuName>
+        <MenuName title="美铂金" zsGroupCode="">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="COMEX4" MarketID="5000"/>
+            </Rules>
+        </MenuName>
+        <MenuName title="美钯金" zsGroupCode="">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="COMEX5" MarketID="5000"/>
+            </Rules>
+        </MenuName>
+    </pbmarket>
+    <pbmarket name="CME能源" id="841" default="1">
+        <image normal="yinhang.png" focus="yinhang.png" />
+        <MenuName title="美原油" zsGroupCode="">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="NYMEYY" MarketID="5001"/>
+            </Rules>
+        </MenuName>
+        <MenuName title="美燃油" zsGroupCode="">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="NYMERY" MarketID="5001"/>
+            </Rules>
+        </MenuName>
+    </pbmarket>
+    <pbmarket name="CME农作物" id="602" default="1">
+        <image normal="yinhang.png" focus="yinhang.png" />
+        <MenuName title="美黄豆" zsGroupCode="">
+            <Rules>
+                <Rule Category="MarketAndCode" GroupCode="CBOT1" MarketID="5002" Code="SBC*"/>
+            </Rules>
+        </MenuName>
+        <MenuName title="美豆粉" zsGroupCode="">
+            <Rules>
+                <Rule Category="MarketAndCode" GroupCode="CBOT1" MarketID="5002" Code="SMC*"/>
+            </Rules>
+        </MenuName>
+        <MenuName title="美豆油" zsGroupCode="">
+            <Rules>
+                <Rule Category="MarketAndCode" GroupCode="CBOT1" MarketID="5002" Code="SOC*"/>
+            </Rules>
+        </MenuName>
+        <MenuName title="美小麦" zsGroupCode="">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="CBOT2" MarketID="5002"/>
+            </Rules>
+        </MenuName>
+        <MenuName title="美玉米" zsGroupCode="">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="CBOT3" MarketID="5002"/>
+            </Rules>
+        </MenuName>
+    </pbmarket>
+    <pbmarket name="ICE" id="813" default="0">
+        <image normal="yinhang.png" focus="yinhang.png" />
+        <MenuName title="" zsGroupCode="">
+            <Rules>
+                <Rule Category="MarketAndCode" GroupCode="NYMEXMH" MarketID="5003" Code="CTN*"/>
+                <Rule Category="MarketAndCode" GroupCode="NYMEXBT" MarketID="5004" Code="SGN*"/>
+            </Rules>
+        </MenuName>
+    </pbmarket>
+    <pbmarket name="东京橡胶" id="" default="1">
+        <image normal="yinhang.png" focus="yinhang.png" />
+        <MenuName title="" zsGroupCode="">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="TOCM1" MarketID="7000"/>
+            </Rules>
+        </MenuName>
+    </pbmarket>
+    <pbmarket name="马棕油" id="" default="1">
+        <image normal="yinhang.png" focus="yinhang.png" />
+        <MenuName title="" zsGroupCode="">
+            <Rules>
+                <Rule Category="MarketAndGroup" GroupCode="ZLY" MarketID="8000"/>
+            </Rules>
+        </MenuName>
+    </pbmarket>
+</pbmarkets>

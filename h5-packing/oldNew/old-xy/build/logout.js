@@ -1,0 +1,1 @@
+function cancel(){$(".my-modal").addClass("hide")}function confirm(){$(".my-modal").removeClass("hide")}function logout(){pbEngine.loginOut(CID),pbEngine.setTradeCurrentAccLoginOutState()}$(".my-modal-backdrop").click(cancel);

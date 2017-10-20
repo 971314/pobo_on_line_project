@@ -1,0 +1,98 @@
+<template>
+    <div class="full-height">
+        <div class="search" :class="{'active':keyworld}">
+            <input type="text" v-model="keyworld">
+        </div>
+        <mt-index-list>
+            <mt-index-section index="A">
+                <mt-cell title="Aaron"></mt-cell>
+                <mt-cell title="Alden"></mt-cell>
+                <mt-cell title="Austin"></mt-cell>
+            </mt-index-section>
+            <mt-index-section index="B">
+                <mt-cell title="Baldwin"></mt-cell>
+                <mt-cell title="Braden"></mt-cell>
+            </mt-index-section>
+            <mt-index-section index="C">
+                <mt-cell title="Baldwin"></mt-cell>
+                <mt-cell title="Braden"></mt-cell>
+            </mt-index-section>
+            <mt-index-section index="D">
+                <mt-cell title="Baldwin"></mt-cell>
+                <mt-cell title="Braden"></mt-cell>
+            </mt-index-section>
+            <mt-index-section index="E">
+                <mt-cell title="Baldwin"></mt-cell>
+                <mt-cell title="Braden"></mt-cell>
+            </mt-index-section>
+            <mt-index-section index="F">
+                <mt-cell title="Baldwin"></mt-cell>
+                <mt-cell title="Braden"></mt-cell>
+            </mt-index-section>
+            <mt-index-section index="G">
+                <mt-cell title="Baldwin"></mt-cell>
+                <mt-cell title="Braden"></mt-cell>
+            </mt-index-section>
+            <mt-index-section index="H">
+                <mt-cell title="Baldwin"></mt-cell>
+                <mt-cell title="Braden"></mt-cell>
+            </mt-index-section>
+            <mt-index-section index="Z">
+                <mt-cell title="Zack"></mt-cell>
+                <mt-cell title="Zane"></mt-cell>
+            </mt-index-section>
+        </mt-index-list>
+    </div>
+</template>
+<script>
+export default {
+    data() {
+        return {
+            keyworld: ''
+        }
+    }
+}
+</script>
+<style lang="less">
+@import "./../assets/css/common.less";
+.search {
+    position: relative;
+    height: 44px;
+    padding: 8px 10px;
+    background: #dedede;
+    input {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        border-radius: 5px;
+        padding-left: 32px;
+        .font-10;
+        .text-color18;
+    }
+    &:after {
+        content: "搜索";
+        position: absolute;
+        width: 34px;
+        height: 28px;
+        line-height: 28px;
+        left: 50%;
+        margin-left: -17px;
+        padding-left: 24px;
+        background: url(./../assets/img/搜索-默认.png) no-repeat 0 center;
+        background-size: 16px 16px;
+        .font-10;
+        .text-color47;
+    }
+    &.active,
+    &:hover {
+        &:after {
+            content: "";
+            width: 32px;
+            left: 8px;
+            margin-left: 0;
+            padding-left: 0;
+            background-position: center;
+        }
+    }
+}
+</style>

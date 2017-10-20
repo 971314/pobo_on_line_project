@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<meta name="format-detection" content="telephone=no, email=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="browsermode" content="application">
+	<meta name="x5-page-mode" content="app">
+	<meta name="msapplication-tap-highlight" content="no">
+	<title>申银万国期货</title>
+	<link href="../../css/common.css" rel="stylesheet" />
+	<link href="../../css/style.css" rel="stylesheet" />
+	<link href="../../css/animate.css" rel="stylesheet" />
+	<link href="../../css/ui-font.css" rel="stylesheet" />
+	<link href="../../../2.0.0/css/hsea.min.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="page page-current" id="userInfo_index" data-pageTitle='申银万国期货' data-swiperPanel='true' data-pageLevel='1' data-refresh='true' data-script='futures/scripts/userInfo/index.js'>
+		<section class="main fixed boost">
+			<article class="content">
+				<!-- 没登陆  begin-->
+				<div id="loginStart1" class="my_topbox" style="display">
+					<a class="reg_link" id="register_btn" href="javascript:void(0);">注册</a>
+					<div class="login_info">
+						<div class="head_img">
+							<div class="pic"></div>
+						</div>
+						<p>您还未登录，请先登录</p>
+						<a class="login_btn" href="javascript:void(0);">登录</a>
+					</div>
+					<div class="lg_bg"></div>
+				</div>
+					<!-- 没登陆  end-->
+					<!-- 登陆了  begin-->
+				<div id="loginStart2" class="my_topbox my_topbox_login" style="display:none;">
+					<div class="login_info boost">
+						<div class="head_img boost">
+							<div class="pic"><img src="../../images/user_img.png" id="face_image"></div>
+							<a class="head_edit" id="edit_userInfo" href="javascript:void(0);"></a>
+						</div>
+						<h5 style="display: none;">陈晨</h5>
+						<p><span class="cs"></span></p>
+					</div>
+					<div class="wave01"></div>
+					<div class="wave02"></div>
+				</div>
+				<!-- 登陆了  end-->
+				<div class="must_list">
+					<ul>
+						<li id="s">
+							<a href="javascript:void(0);" id="transaction_setting_index">
+								<img src="../../images/my_ic01.png">
+								<span>交易设置</span>
+							</a>
+						</li>
+						<li id="s">
+							<a href="javascript:void(0);" id="system_setting_index">
+								<img src="../../images/my_ic02.png">
+								<span>系统设置</span>
+							</a>
+						</li>
+						<li id="s" style="display: none;">
+							<a href="javascript:void(0);" id="my_collection_index">
+								<img src="../../images/my_ic03.png">
+								<span>我的收藏</span>
+							</a>
+						</li>
+						<li id="sa" style="display: none;">
+							<a href="javascript:void(0);" id="message_push_index">
+								<img src="../../images/my_ic04.png">
+								<span>消息中心<i style="display: none;">99+</i></span>
+							</a>
+						</li>
+						<li id="s">
+							<a href="javascript:void(0);" id="opinoin_feedback_index">
+								<img src="../../images/my_ic05.png">
+								<span>意见反馈</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" id="about_Us_index">
+								<img src="../../images/my_ic06.png">
+								<span>关于我们</span>
+							</a>
+						</li>
+					
+					</ul>
+				</div>
+			</article>
+		</section>
+	</div>
+</body>
+<script>
+	var _configPath = '../../configuration.js',
+		_sysVersion = "1.0.0";
+</script>
+<script src="../../../2.0.0/lib/jquery.min.js"></script>
+<script src="../../../2.0.0/js/hsea.min.js"></script>
+
+</html>
